@@ -14,12 +14,7 @@ export default function Header() {
       </div>
       <div className={styles.hederStyleAll}>
         <div className={styles.mr20}>
-          <Image
-            layout="responsive"
-            src="/headerImg/watch.svg"
-            width={22}
-            height={22}
-          />
+          <Image src="/headerImg/watch.svg" width={22} height={22} />
         </div>
         <p
           className={
@@ -39,12 +34,7 @@ export default function Header() {
       <div className={styles.hederStyleAll}>
         <div className={styles.hederStyleAll}>
           <div className={styles.borCol + " " + styles.mr20}>
-            <Image
-              layout="responsive"
-              src="/headerImg/vk.svg"
-              width={15}
-              height={15}
-            />
+            <Image src="/headerImg/vk.svg" width={15} height={15} />
           </div>
           <p
             className={
@@ -60,12 +50,7 @@ export default function Header() {
         </div>
         <div className={styles.hederStyleAll}>
           <div className={styles.borCol + " " + styles.mr20}>
-            <Image
-              layout="responsive"
-              src="/headerImg/telegram.svg"
-              width={15}
-              height={15}
-            />
+            <Image src="/headerImg/telegram.svg" width={15} height={15} />
           </div>
           <p className={styles.colorWhite + " " + styles.fontRobotoBold16}>
             Telegram
@@ -75,7 +60,6 @@ export default function Header() {
       <div className={styles.hederStyleAll}>
         <div>
           <Image
-            layout="responsive"
             className={styles.mr20}
             src="/headerImg/adress.svg"
             width={22}
@@ -110,7 +94,6 @@ export default function Header() {
         </div>
         <div className={styles.bgColorPhone}>
           <Image
-            layout="responsive"
             src="/headerImg/phone.svg"
             width={22}
             height={22}
