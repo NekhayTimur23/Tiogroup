@@ -2,7 +2,7 @@ import Header from "./headerBlock/Header";
 import NavBlock from "./navBlock/NavBlock";
 import Image from "next/image";
 import styles from "./MainSection.module.sass";
-import ButtonComp from "../Button/ButtonComp";
+import ButtonComp from "../ButtonSection/ButtonComp";
 
 export default function MainSection() {
   return (

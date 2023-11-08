@@ -1,9 +1,11 @@
 import styles from "./page.module.sass";
-import MainSection from "@/components/MainSection/MainSection";
-import AboutSection from "@/components/About/AboutSection";
+import Main from "@/components/MainSection/MainSection";
+import About from "@/components/AboutSection/AboutSection";
 import Head from "next/head";
-import ServicesSection from "@/components/ServicesSection/ServicesSection";
-import Concultation from "@/components/Concultation/Concultation";
+import Services from "@/components/ServicesSection/ServicesSection";
+import Concultation from "@/components/ConcultationSection/Concultation";
+import Reviews from "@/components/ReviewsSection/ReviewsSection";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -17,10 +19,12 @@ export default function Home() {
         />
       </Head>
       <div className={styles.main}>
-        <MainSection />
-        <AboutSection />
-        <ServicesSection />
+        <Main/>
+        <About />
+        <Services />
         <Concultation />
+        <Reviews />
+        <Footer />
       </div>
     </>
   );
