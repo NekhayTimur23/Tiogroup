@@ -32,7 +32,7 @@ export default function ReviewsSection() {
               </p>
               <div className={styles.cardTextBottom}>
                 <p className={styles.cardNameClient}>ЯКОВЛЕВ ВЛАДИМИР</p>
-                <p className={styles.cardCompanyName}>"ООО КОМПАНИЯ"</p>
+                <p className={styles.cardCompanyName}>{"ООО КОМПАНИЯ"}</p>
                 <div className={styles.cardComma}>
                   <Image layout="responsive" src="./reviews/comma.svg" width={45} height={45} />
                 </div>
@@ -56,7 +56,7 @@ export default function ReviewsSection() {
               </p>
               <div className={styles.cardTextBottom}>
                 <p className={styles.cardNameClient}>ЯКОВЛЕВ ВЛАДИМИР</p>
-                <p className={styles.cardCompanyName}>"ООО КОМПАНИЯ"</p>
+                <p className={styles.cardCompanyName}>{"ООО КОМПАНИЯ"}</p>
                 <div className={styles.cardComma}>
                   <Image layout="responsive" src="./reviews/comma.svg" width={45} height={45} />
                 </div>
