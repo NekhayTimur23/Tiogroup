@@ -21,28 +21,13 @@ export default function ConcultationSection() {
       </div>
       <div className={styles.lowerConteiner}>
         <div className="">
-          <Image
-            layout="responsive"
-            src="./consultation/01.svg"
-            width={328}
-            height={244}
-          />
+          <img alt="#" src="./consultation/01.svg" />
         </div>
         <div className="">
-          <Image
-            layout="responsive"
-            src="./consultation/02.svg"
-            width={328}
-            height={244}
-          />
+          <img alt="#" src="./consultation/02.svg" />
         </div>
         <div className="">
-          <Image
-            layout="responsive"
-            src="./consultation/03.svg"
-            width={328}
-            height={244}
-          />
+          <img alt="#" src="./consultation/03.svg" />
         </div>
       </div>
     </div>

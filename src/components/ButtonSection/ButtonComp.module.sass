@@ -1,7 +1,9 @@
+
 .buttonBox
     display: flex
     justify-content: center
     align-items: center
+    user-select: none
     .buttonCall
         display: inline-block
         padding: 1vw
@@ -9,12 +11,25 @@
         background-color: rgb(255, 95, 30)
         color: rgb(255, 255, 255)
         margin-right: 1vw
-        .textOne
-            font-family: 'Oswald', sans-serif
-            font-size: 1.2rem
-            font-weight: bold
-    .textTwo
-        color:  rgb(255, 255, 255)
+        cursor: pointer
         font-family: 'Oswald', sans-serif
-        font-size: 1.6rem
+        font-size: 1.25vw
+        font-weight: bold
+        transition: transform, letter-spacing  0.4s ease
+        &:hover
+            background-color: rgba(255, 94, 30, 0.915)
+            letter-spacing: 1px
+    .textTwo
+        font-family: 'Oswald', sans-serif
+        font-size: 1.25vw
         font-weight: 200
+        color:  rgb(235, 235, 235)
+    .textTwoAbout
+        font-family: 'Oswald', sans-serif
+        font-size: 1.25vw
+        font-weight: 200
+        color:  rgb(0, 0, 0)
+
+        // transition: transform 0.3s ease
+        //         &:hover
+        //             transform: translateY(-5px)

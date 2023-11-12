@@ -7,21 +7,12 @@ export default function ReviewsSection() {
       <h1>ОТЗЫВЫ</h1>
       <div className={styles.reviewsContainer}>
         <div className={styles.reviewsRightBlock}>
-          <Image
-            layout="responsive"
-            src="./reviews/25.svg"
-            width={861}
-            height={355}
-          />
+          <img alt="#" src="./reviews/25.svg" />
         </div>
         <div className={styles.reviewsLeftBlock}>
           <div className={styles.reviewsCard}>
             <div className={styles.cardPhoto}>
-              <img 
-                src="/reviews/team4.jpg"
-                width={116}
-                height={150}
-              />
+              <img alt="#" src="/reviews/team4.jpg" />
             </div>
             <div className={styles.cardTextBlock}>
               <p>
@@ -34,18 +25,14 @@ export default function ReviewsSection() {
                 <p className={styles.cardNameClient}>ЯКОВЛЕВ ВЛАДИМИР</p>
                 <p className={styles.cardCompanyName}>{"ООО КОМПАНИЯ"}</p>
                 <div className={styles.cardComma}>
-                  <Image layout="responsive" src="./reviews/comma.svg" width={45} height={45} />
+                  <img alt="#" src="./reviews/comma.svg" />
                 </div>
               </div>
             </div>
           </div>
           <div className={styles.reviewsCard}>
             <div className={styles.cardPhoto}>
-              <img 
-                src="/reviews/team4.jpg"
-                width={116}
-                height={150}
-              />
+              <img alt="#" src="/reviews/team4.jpg" />
             </div>
             <div className={styles.cardTextBlock}>
               <p>
@@ -58,7 +45,10 @@ export default function ReviewsSection() {
                 <p className={styles.cardNameClient}>ЯКОВЛЕВ ВЛАДИМИР</p>
                 <p className={styles.cardCompanyName}>{"ООО КОМПАНИЯ"}</p>
                 <div className={styles.cardComma}>
-                  <Image layout="responsive" src="./reviews/comma.svg" width={45} height={45} />
+                  <img
+                    alt="#"
+                    src="./reviews/comma.svg"
+                  />
                 </div>
               </div>
             </div>

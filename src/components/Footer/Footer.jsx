@@ -29,7 +29,7 @@ export default function Footer() {
             <div className={styles.footerWhatsApp}>
               <div className={styles.WhatsApp}>
                 <div>
-                  <Image src="/footer/whatsApp.svg" width={19} height={19} />
+                  <img alt="#" src="/footer/whatsApp.svg" />
                 </div>
               </div>
               <p>WhatsApp</p>
@@ -38,7 +38,7 @@ export default function Footer() {
             <div className={styles.footerTelegrem}>
               <div className={styles.Telegram}>
                 <div>
-                  <Image src="/footer/telegram.svg" width={19} height={19} />
+                  <img alt="#" src="/footer/telegram.svg" />
                 </div>
               </div>
               <p>Telegram</p>
@@ -47,7 +47,7 @@ export default function Footer() {
             <div className={styles.footerVkontakte}>
               <div className={styles.Vkontakte}>
                 <div>
-                  <Image src="/footer/Vkontakte.svg" width={19} height={19} />
+                  <img alt="#" src="/footer/Vkontakte.svg" />
                 </div>
               </div>
               <p>Вконтакте</p>
@@ -66,15 +66,17 @@ export default function Footer() {
         <div className={styles.footerButton}>
           <div className={styles.footerButtonLogo}>
             <div className={styles.logo}>
-              <Image
-                //   layout="responsive"
-                src="/headerImg/logo.svg"
-                width={385}
-                height={257}
-              />
+              <img alt="#" src="/headerImg/logo.svg" />
             </div>
-            <ButtonComp />
+            <div className={styles.button}>
+              <div className={styles.buttonContainer}>
+                <ButtonComp />
+              </div>
+            </div>
           </div>
+        </div>
+        <div className={styles.footerImgMan}>
+          <img src="./footer/man.svg" alt="#" />
         </div>
       </div>
       <div className={styles.Info}>

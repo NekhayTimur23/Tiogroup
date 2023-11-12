@@ -9,24 +9,26 @@ export default function MainSection() {
     <div className={styles.mainSection}>
       <Header />
       <NavBlock />
-      <div className={styles.content}>
-        <div className={styles.leftBlock}>
-          <div className={styles.pozitionBox}>
-            <p className={styles.textOne}>ПОЛНЫЙ КОМПЛЕКС</p>
-            <p className={styles.textTwo}>СТРОИТЕЛЬНЫХ</p>
-            <p className={styles.textThree}>УСЛУГ</p>
-            <p className={styles.textFour}>С ГАРАНТИЕЙ В МОСКВЕ</p>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <div className={styles.leftBlock}>
+            <div className={styles.pozitionBox}>
+              <p className={styles.textOne}>ПОЛНЫЙ КОМПЛЕКС</p>
+              <p className={styles.textTwo}>СТРОИТЕЛЬНЫХ</p>
+              <p className={styles.textThree}>УСЛУГ</p>
+              <p className={styles.textFour}>С ГАРАНТИЕЙ В МОСКВЕ</p>
+            </div>
           </div>
-        </div>
-        <div className={styles.rightBlock}>
-          <div className={styles.rightBlockText}>
-            <p>
-              Наши преимущества - это профессионализм, опыт, ответственность и
-              оперативность. Мы гарантируем качественное выполнение работ,
-              соблюдение сроков и учет всех пожеланий заказчика.
-            </p>
+          <div className={styles.rightBlock}>
+            <div className={styles.rightBlockText}>
+              <p>
+                Наши преимущества - это профессионализм, опыт, ответственность и
+                оперативность. Мы гарантируем качественное выполнение работ,
+                соблюдение сроков и учет всех пожеланий заказчика.
+              </p>
+            </div>
+            <ButtonComp />
           </div>
-          <ButtonComp />
         </div>
       </div>
     </div>

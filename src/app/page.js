@@ -8,6 +8,7 @@ import Reviews from "@/components/ReviewsSection/ReviewsSection";
 import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -19,7 +20,7 @@ export default function Home() {
         />
       </Head>
       <div className={styles.main}>
-        <Main/>
+        <Main />
         <About />
         <Services />
         <Concultation />

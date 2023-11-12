@@ -5,8 +5,9 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <div>
-        <Image
-          layout="responsive"
+        <img
+          alt="#"
+          className={styles.headerLogo}
           src="/headerImg/logo.svg"
           width={93}
           height={62}
@@ -14,7 +15,7 @@ export default function Header() {
       </div>
       <div className={styles.hederStyleAll}>
         <div className={styles.mr20}>
-          <Image src="/headerImg/watch.svg" width={22} height={22} />
+          <img alt="#" src="/headerImg/watch.svg" width={22} height={22} />
         </div>
         <p
           className={
@@ -31,35 +32,35 @@ export default function Header() {
           с 09:00 до 19:00
         </p>
       </div>
-      <div className={styles.hederStyleAll}>
+      <div className={styles.hederStyleAll + " " + styles.hederSocNetBlock}>
         <div className={styles.hederStyleAll}>
-          <div className={styles.borCol + " " + styles.mr20}>
-            <Image src="/headerImg/vk.svg" width={15} height={15} />
+          <div className={styles.hederSocNet}>
+            <div className={styles.borCol}>
+              <img alt="#" src="/headerImg/vk.svg" width={15} height={15} />
+            </div>
+            <p className={styles.fontRobotoBold16}>ВКонтакте</p>
           </div>
-          <p
-            className={
-              styles.mr20 +
-              " " +
-              styles.colorWhite +
-              " " +
-              styles.fontRobotoBold16
-            }
-          >
-            ВКонтакте
-          </p>
         </div>
         <div className={styles.hederStyleAll}>
-          <div className={styles.borCol + " " + styles.mr20}>
-            <Image src="/headerImg/telegram.svg" width={15} height={15} />
+          <div className={styles.hederSocNet}>
+            <div className={styles.borCol}>
+              <img
+                alt="#"
+                src="/headerImg/telegram.svg"
+                width={15}
+                height={15}
+              />
+            </div>
+            <p className={styles.colorWhite + " " + styles.fontRobotoBold16}>
+              Telegram
+            </p>
           </div>
-          <p className={styles.colorWhite + " " + styles.fontRobotoBold16}>
-            Telegram
-          </p>
         </div>
       </div>
       <div className={styles.hederStyleAll}>
         <div>
-          <Image
+          <img
+            alt="#"
             className={styles.mr20}
             src="/headerImg/adress.svg"
             width={22}
@@ -82,7 +83,7 @@ export default function Header() {
         </p>
       </div>
       <div className={styles.hederStyleAll}>
-        <div>
+        <div className={styles.hederNomber}>
           <div className={styles.mr20}>
             <p className={styles.colorWhite + " " + styles.fontOswaldBold25}>
               8 800 700-00-00
@@ -93,11 +94,7 @@ export default function Header() {
           </div>
         </div>
         <div className={styles.bgColorPhone}>
-          <Image
-            src="/headerImg/phone.svg"
-            width={22}
-            height={22}
-          />
+          <img alt="#" src="/headerImg/phone.svg" />
         </div>
       </div>
     </div>
