@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useState } from "react";
+import Modal from "@/components/MainSection/Modal";
 import styles from "./page.module.sass";
 import Main from "@/components/MainSection/MainSection";
 import About from "@/components/AboutSection/AboutSection";
@@ -6,8 +9,26 @@ import Services from "@/components/ServicesSection/ServicesSection";
 import Concultation from "@/components/ConcultationSection/Concultation";
 import Reviews from "@/components/ReviewsSection/ReviewsSection";
 import Footer from "@/components/Footer/Footer";
+import Gallery from "@/components/Gallery/Garrery";
+import ButtonComp from "@/components/ButtonSection/ButtonComp";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [isModalOpen]);
+
+  // overflow: hidden
+
   return (
     <>
       <Head>
@@ -19,12 +40,18 @@ export default function Home() {
         />
       </Head>
       <div className={styles.main}>
-        <Main/>
-        <About />
+        <Main onClick={toggleModal} />
+        <About onClick={toggleModal} />
         <Services />
-        <Concultation />
+        <Gallery />
+        <Concultation onClick={toggleModal} />
         <Reviews />
-        <Footer />
+        <Footer onClick={toggleModal} />
+        {isModalOpen && (
+          <Modal onClose={toggleModal}>
+            {/* Содержимое модального окна */}
+          </Modal>
+        )}
       </div>
     </>
   );

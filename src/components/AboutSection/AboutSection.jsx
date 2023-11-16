@@ -1,35 +1,21 @@
 import styles from "./AboutSection.module.sass";
-import Image from "next/image";
 import ButtonComp from "../ButtonSection/ButtonComp";
 
-export default function AboutSection() {
+export default function AboutSection({onClick}) {
+
+
   return (
     <div className={styles.aboutSection}>
       <div className={styles.rightAboutSection}>
         <div>
-          <Image
-            src="/about/5000.svg"
-            layout="responsive"
-            width={218}
-            height={191}
-          />
+          <img alt="#" src="/about/5000.svg" />
         </div>
         <div className={styles.rightAboutSectionFirst}>
           <div>
-            <Image
-              src="/about/01.svg"
-              layout="responsive"
-              width={290}
-              height={255}
-            />
+            <img alt="#" src="/about/01.svg" />
           </div>
           <div>
-            <Image
-              src="/about/02.svg"
-              layout="responsive"
-              width={290}
-              height={255}
-            />
+            <img alt="#" src="/about/02.svg" />
           </div>
         </div>
       </div>
@@ -59,7 +45,7 @@ export default function AboutSection() {
             проектами и обеспечить их успешное завершение.
           </p>
         </div>
-        <ButtonComp />
+        <ButtonComp onClick={onClick} colorText={true}/>
       </div>
     </div>
   );
