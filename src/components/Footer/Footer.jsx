@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./Footer.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 
-export default function Footer() {
+export default function Footer({onClick}) {
   return (
     <div className={styles.footer}>
       <div className={styles.footerSection}>
@@ -70,13 +70,10 @@ export default function Footer() {
             </div>
             <div className={styles.button}>
               <div className={styles.buttonContainer}>
-                <ButtonComp />
+                <ButtonComp onClick={onClick}/>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.footerImgMan}>
-          <img src="./footer/man.svg" alt="#" />
         </div>
       </div>
       <div className={styles.Info}>

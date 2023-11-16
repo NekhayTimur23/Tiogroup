@@ -2,7 +2,7 @@ import styles from "./Concultation.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 import Image from "next/image";
 
-export default function ConcultationSection() {
+export default function ConcultationSection({onClick}) {
   return (
     <div className={styles.concultation}>
       <div className={styles.upperConteiner}>
@@ -10,7 +10,7 @@ export default function ConcultationSection() {
           <p className={styles.textOne}>ПОЛУЧИТЕ БЕСПЛАТНУЮ</p>
           <h1 className={styles.textTwo}>КОНСУТАЦИЮ</h1>
           <p className={styles.textThree}>СПЕЦИАЛИСТА В ТЕЧЕНИЕ 30 МИНУТ</p>
-          <ButtonComp />
+          <ButtonComp onClick={onClick}/>
         </div>
         <div className={styles.upperConteinerlef}>
           <p className={styles.textOne}>РАБОТАЕМ С</p>

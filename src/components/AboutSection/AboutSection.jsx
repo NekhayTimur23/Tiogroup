@@ -1,7 +1,7 @@
 import styles from "./AboutSection.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 
-export default function AboutSection() {
+export default function AboutSection({onClick}) {
 
 
   return (
@@ -45,7 +45,7 @@ export default function AboutSection() {
             проектами и обеспечить их успешное завершение.
           </p>
         </div>
-        <ButtonComp colorText={true}/>
+        <ButtonComp onClick={onClick} colorText={true}/>
       </div>
     </div>
   );

@@ -1,10 +1,9 @@
 import Header from "./headerBlock/Header";
 import NavBlock from "./navBlock/NavBlock";
-import Image from "next/image";
 import styles from "./MainSection.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 
-export default function MainSection() {
+export default function MainSection({onClick}) {
   return (
     <div className={styles.mainSection}>
       <Header />
@@ -27,7 +26,7 @@ export default function MainSection() {
                 соблюдение сроков и учет всех пожеланий заказчика.
               </p>
             </div>
-            <ButtonComp />
+            <ButtonComp onClick={onClick}/>
           </div>
         </div>
       </div>
