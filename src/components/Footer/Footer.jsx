@@ -2,7 +2,10 @@ import Image from "next/image";
 import styles from "./Footer.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 
-export default function Footer({onClick}) {
+export default function Footer({ onClick }) {
+  const telegramChannelUrl = "https://t.me/+79189255217";
+  const whatsAppChannelUrl = "https://wa.me/+79189255217";
+
   return (
     <div className={styles.footer}>
       <div className={styles.footerSection}>
@@ -26,32 +29,52 @@ export default function Footer({onClick}) {
         <div className={styles.footerCocialNetwork}>
           <div className={styles.footerCNBlock}>
             {/* вацап */}
-            <div className={styles.footerWhatsApp}>
-              <div className={styles.WhatsApp}>
-                <div>
-                  <img alt="#" src="/footer/whatsApp.svg" />
+            <a
+              href={whatsAppChannelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className={styles.footerWhatsApp}>
+                <div className={styles.WhatsApp}>
+                  <div>
+                    <img alt="#" src="/footer/whatsApp.svg" />
+                  </div>
                 </div>
+                <p>WhatsApp</p>
               </div>
-              <p>WhatsApp</p>
-            </div>
+            </a>
+
             {/* телега */}
-            <div className={styles.footerTelegrem}>
-              <div className={styles.Telegram}>
-                <div>
-                  <img alt="#" src="/footer/telegram.svg" />
+            <a
+
+              href={telegramChannelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className={styles.footerTelegrem}>
+                <div className={styles.Telegram}>
+                  <div>
+                    <img alt="#" src="/footer/telegram.svg" />
+                  </div>
                 </div>
+                <p>Telegram</p>
               </div>
-              <p>Telegram</p>
-            </div>
+            </a>
             {/* вконтакте */}
-            <div className={styles.footerVkontakte}>
-              <div className={styles.Vkontakte}>
-                <div>
-                  <img alt="#" src="/footer/Vkontakte.svg" />
+            <a
+              href={whatsAppChannelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className={styles.footerVkontakte}>
+                <div className={styles.Vkontakte}>
+                  <div>
+                    <img alt="#" src="/footer/Vkontakte.svg" />
+                  </div>
                 </div>
+                <p>Вконтакте</p>
               </div>
-              <p>Вконтакте</p>
-            </div>
+            </a>
           </div>
         </div>
         <div className={styles.footerCall}>
@@ -70,7 +93,7 @@ export default function Footer({onClick}) {
             </div>
             <div className={styles.button}>
               <div className={styles.buttonContainer}>
-                <ButtonComp onClick={onClick}/>
+                <ButtonComp onClick={onClick} />
               </div>
             </div>
           </div>

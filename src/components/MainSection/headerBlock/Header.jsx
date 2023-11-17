@@ -1,7 +1,9 @@
-import Image from "next/image";
 import styles from "./Header.module.sass";
 
-export default function Header() {
+export default function Header({ onClick }) {
+  const telegramChannelUrl = "https://t.me/+79189255217";
+  const whatsAppChannelUrl = "https://wa.me/+79189255217";
+
   return (
     <div className={styles.header}>
       <div>
@@ -35,25 +37,40 @@ export default function Header() {
       <div className={styles.hederStyleAll + " " + styles.hederSocNetBlock}>
         <div className={styles.hederStyleAll}>
           <div className={styles.hederSocNet}>
-            <div className={styles.borCol}>
-              <img alt="#" src="/headerImg/vk.svg" width={15} height={15} />
-            </div>
-            <p className={styles.fontRobotoBold16}>ВКонтакте</p>
+            <a
+              className={styles.hederSocNet}
+              href={whatsAppChannelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className={styles.borCol}>
+                <img alt="#" src="/footer/whatsApp.svg" width={15} height={15} />
+              </div>
+
+              <p className={styles.fontRobotoBold16}>WhatsApp</p>
+            </a>
           </div>
         </div>
         <div className={styles.hederStyleAll}>
           <div className={styles.hederSocNet}>
-            <div className={styles.borCol}>
-              <img
-                alt="#"
-                src="/headerImg/telegram.svg"
-                width={15}
-                height={15}
-              />
-            </div>
-            <p className={styles.colorWhite + " " + styles.fontRobotoBold16}>
-              Telegram
-            </p>
+            <a className={styles.hederSocNet}
+              href={telegramChannelUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className={styles.borCol}>
+                <img
+                  alt="Telegram"
+                  src="/headerImg/telegram.svg"
+                  width={15}
+                  height={15}
+                />
+              </div>
+
+              <p className={styles.colorWhite + " " + styles.fontRobotoBold16}>
+                Telegram
+              </p>
+            </a>
           </div>
         </div>
       </div>
@@ -93,7 +110,7 @@ export default function Header() {
             </p>
           </div>
         </div>
-        <div className={styles.bgColorPhone}>
+        <div onClick={onClick} className={styles.bgColorPhone}>
           <img alt="#" src="/headerImg/phone.svg" />
         </div>
       </div>

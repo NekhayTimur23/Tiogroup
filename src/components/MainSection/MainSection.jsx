@@ -8,7 +8,7 @@ import { forwardRef } from "react";
 const MainSection = forwardRef(({ onClick, onNavigate }, ref) => {
   return (
     <div ref={ref} className={styles.mainSection}>
-      <Header />
+      <Header onClick={onClick}/>
       <NavBlock onNavigate={onNavigate} />
       <div className={styles.container}>
         <div className={styles.content}>
