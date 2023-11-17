@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect, Children, cloneElement, forwardRef } from "react";
 import "./Carousel.sass";
 

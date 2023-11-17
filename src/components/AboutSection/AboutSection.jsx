@@ -1,3 +1,4 @@
+"use client"
 import styles from "./AboutSection.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 import { forwardRef } from "react";

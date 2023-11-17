@@ -1,3 +1,4 @@
+"use client";
 import Header from "./headerBlock/Header";
 import NavBlock from "./navBlock/NavBlock";
 import styles from "./MainSection.module.sass";
