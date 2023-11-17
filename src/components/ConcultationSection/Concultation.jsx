@@ -1,10 +1,10 @@
 import styles from "./Concultation.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
-import Image from "next/image";
+import { forwardRef } from "react";
 
-export default function ConcultationSection({onClick}) {
+const  ConcultationSection = forwardRef(({onClick}, ref ) => {
   return (
-    <div className={styles.concultation}>
+    <div ref={ref} className={styles.concultation}>
       <div className={styles.upperConteiner}>
         <div className={styles.upperConteinerRight}>
           <p className={styles.textOne}>ПОЛУЧИТЕ БЕСПЛАТНУЮ</p>
@@ -32,4 +32,6 @@ export default function ConcultationSection({onClick}) {
       </div>
     </div>
   );
-}
+});
+
+export default ConcultationSection;

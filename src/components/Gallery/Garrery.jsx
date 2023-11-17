@@ -1,12 +1,15 @@
 import Carousel from "./Carousel/Carousel"
+import { forwardRef } from "react"
 import "./Garrery.sass"
 
-export default function Gallery() {
+const Gallery = forwardRef((props, ref) => {
     return(
-        <Carousel>
+        <Carousel ref={ref}>
             <div className="item item-1">item-1</div>
             <div className="item item-2">item-2</div>
             <div className="item item-3">item-3</div>
         </Carousel>
     )
-}
+});
+
+export default Gallery;

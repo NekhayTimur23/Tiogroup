@@ -2,12 +2,13 @@ import Header from "./headerBlock/Header";
 import NavBlock from "./navBlock/NavBlock";
 import styles from "./MainSection.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
+import { forwardRef } from "react";
 
-export default function MainSection({onClick}) {
+const MainSection = forwardRef(({ onClick, onNavigate }, ref) => {
   return (
-    <div className={styles.mainSection}>
+    <div ref={ref} className={styles.mainSection}>
       <Header />
-      <NavBlock />
+      <NavBlock onNavigate={onNavigate} />
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={styles.leftBlock}>
@@ -26,10 +27,12 @@ export default function MainSection({onClick}) {
                 соблюдение сроков и учет всех пожеланий заказчика.
               </p>
             </div>
-            <ButtonComp onClick={onClick}/>
+            <ButtonComp onClick={onClick} />
           </div>
         </div>
       </div>
     </div>
   );
-}
+});
+
+export default MainSection;

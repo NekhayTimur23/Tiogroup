@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, forwardRef } from "react";
 import styles from "./ServicesSection.module.sass";
 
-export default function ServicesSection() {
+const ServicesSection = forwardRef((props, ref) => {
   const [listServices, setListServices] = useState(1);
 
   const serRef = useRef();
@@ -13,7 +13,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <div className={styles.servicesSection}>
+    <div ref={ref} className={styles.servicesSection}>
       <div className={styles.servicesContainer}>
         <h2>Наши услуги</h2>
         <div className={styles.servicesContent}>
@@ -88,8 +88,11 @@ export default function ServicesSection() {
               <p>6. Кровельные работы</p>
               <p>7. Отделочные работы</p>
             </div>
-            <div className={styles.cardTextTwo + " " + styles.cardTextAll}
-            style={listServices == 2 ? {display: "block"} : { display: "none"}}
+            <div
+              className={styles.cardTextTwo + " " + styles.cardTextAll}
+              style={
+                listServices == 2 ? { display: "block" } : { display: "none" }
+              }
             >
               <h1>Благоустройство территорий</h1>
               <h3>Описание услуги</h3>
@@ -114,8 +117,11 @@ export default function ServicesSection() {
               <p>5. Установка освещения</p>
               <p>6. Устройство ирригационных систем</p>
             </div>
-            <div className={styles.cardTextFree + " " + styles.cardTextAll}
-            style={listServices == 3 ? {display: "block"} : { display: "none"}}
+            <div
+              className={styles.cardTextFree + " " + styles.cardTextAll}
+              style={
+                listServices == 3 ? { display: "block" } : { display: "none" }
+              }
             >
               <h1>Электромонтажные работы</h1>
               <h3>Описание услуги</h3>
@@ -139,17 +145,6 @@ export default function ServicesSection() {
       </div>
     </div>
   );
-}
+});
 
-{
-  /* <div className={styles.serviceCardImg}></div>
-<div className={styles.serviceCardImg}></div>
-<div className={styles.serviceCardImg}></div>
-<div className={styles.serviceCardImg}></div>
-<div className={styles.serviceCardImg}></div>
-<div className={styles.serviceCardImg}></div> */
-}
-
-{
-  /* <button class={styles.button}>Подробнее</button> */
-}
+export default ServicesSection;
