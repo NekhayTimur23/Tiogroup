@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Modal from "@/components/MainSection/Modal";
 import styles from "./page.module.sass";
 import Main from "@/components/MainSection/MainSection";
@@ -10,10 +10,29 @@ import Concultation from "@/components/ConcultationSection/Concultation";
 import Reviews from "@/components/ReviewsSection/ReviewsSection";
 import Footer from "@/components/Footer/Footer";
 import Gallery from "@/components/Gallery/Garrery";
-import ButtonComp from "@/components/ButtonSection/ButtonComp";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const sectionRefs = {
+    section1: useRef(null),
+    section2: useRef(null),
+    section3: useRef(null),
+    section4: useRef(null),
+    section5: useRef(null),
+  };
+
+  const scrollToSection = (sectionName) => {
+    const section = sectionRefs[sectionName].current;
+    if (section) {
+      const sectionTop = section.getBoundingClientRect().top;
+      const offset = window.pageYOffset;
+      const top = sectionTop + offset;
+      const windowHeight = window.innerHeight;
+      const scrollTo = top - windowHeight / 2 + section.offsetHeight / 2;
+      window.scrollTo({ top: scrollTo, behavior: "smooth" });
+    }
+  };
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -40,11 +59,15 @@ export default function Home() {
         />
       </Head>
       <div className={styles.main}>
-        <Main onClick={toggleModal} />
-        <About onClick={toggleModal} />
-        <Services />
-        <Gallery />
-        <Concultation onClick={toggleModal} />
+        <Main
+          ref={sectionRefs.section1}
+          onNavigate={scrollToSection}
+          onClick={toggleModal}
+        />
+        <About ref={sectionRefs.section2} onClick={toggleModal} />
+        <Services ref={sectionRefs.section3} />
+        <Gallery ref={sectionRefs.section5} />
+        <Concultation ref={sectionRefs.section4} onClick={toggleModal} />
         <Reviews />
         <Footer onClick={toggleModal} />
         {isModalOpen && (

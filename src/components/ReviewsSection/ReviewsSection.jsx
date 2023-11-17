@@ -1,5 +1,5 @@
 import styles from "./ReviewsSection.module.sass";
-import Image from "next/image";
+import { forwardRef } from "react";
 
 export default function ReviewsSection() {
   return (

@@ -1,8 +1,8 @@
 "use client";
-import { useState, useEffect, Children, cloneElement } from "react";
+import { useState, useEffect, Children, cloneElement, forwardRef } from "react";
 import "./Carousel.sass";
 
-export default function Carousel({ children }) {
+const Carousel = forwardRef(({ children }, ref ) => {
   const [peges, setPages] = useState([]);
   const [slid, setSlid] = useState("0");
   const [slidCounter, setSlidCounter] = useState(1);
@@ -23,9 +23,9 @@ export default function Carousel({ children }) {
       return Math.max(newSlid, -(peges.length - 1) * 100);
     });
     setSlidCounter((currentSlid) => {
-        const slidCounter = currentSlid + 1;
-        return Math.min(slidCounter, peges.length);
-      });
+      const slidCounter = currentSlid + 1;
+      return Math.min(slidCounter, peges.length);
+    });
   };
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Carousel({ children }) {
   }, []);
 
   return (
-    <div className="carousel-section">
+    <div ref={ref} className="carousel-section">
       <div className="carousel-contianer">
         <div className="carousel-window">
           <div
@@ -101,4 +101,6 @@ export default function Carousel({ children }) {
       </div>
     </div>
   );
-}
+});
+
+export default Carousel;

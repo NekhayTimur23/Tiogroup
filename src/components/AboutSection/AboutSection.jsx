@@ -1,11 +1,12 @@
 import styles from "./AboutSection.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
+import { forwardRef } from "react";
 
-export default function AboutSection({onClick}) {
+const AboutSection = forwardRef(({onClick}, ref) => {
 
 
   return (
-    <div className={styles.aboutSection}>
+    <div ref={ref} className={styles.aboutSection}>
       <div className={styles.rightAboutSection}>
         <div>
           <img alt="#" src="/about/5000.svg" />
@@ -49,4 +50,7 @@ export default function AboutSection({onClick}) {
       </div>
     </div>
   );
-}
+});
+
+
+export default AboutSection;
