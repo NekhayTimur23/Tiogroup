@@ -1,5 +1,6 @@
+"use client";
+
 import styles from "./ReviewsSection.module.sass";
-import { forwardRef } from "react";
 
 export default function ReviewsSection() {
   return (
