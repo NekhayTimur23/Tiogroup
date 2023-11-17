@@ -14,4 +14,6 @@ const Gallery = forwardRef((props, ref) => {
     )
 });
 
+
+Gallery.displayName = 'Gallery';
 export default Gallery;
