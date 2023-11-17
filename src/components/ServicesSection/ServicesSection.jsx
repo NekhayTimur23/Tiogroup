@@ -147,4 +147,7 @@ const ServicesSection = forwardRef((props, ref) => {
   );
 });
 
+ServicesSection.displayName = 'ServicesSection';
+
+
 export default ServicesSection;

@@ -41,7 +41,7 @@ const Carousel = forwardRef(({ children }, ref ) => {
         });
       })
     );
-  }, []);
+  }, [children]);
 
   return (
     <div ref={ref} className="carousel-section">
@@ -103,5 +103,7 @@ const Carousel = forwardRef(({ children }, ref ) => {
     </div>
   );
 });
+
+Carousel.displayName = 'Carousel';
 
 export default Carousel;

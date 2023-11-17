@@ -36,4 +36,7 @@ const MainSection = forwardRef(({ onClick, onNavigate }, ref) => {
   );
 });
 
+
+MainSection.displayName = 'MainSection';
+
 export default MainSection;

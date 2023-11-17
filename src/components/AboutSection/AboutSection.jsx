@@ -53,5 +53,6 @@ const AboutSection = forwardRef(({onClick}, ref) => {
   );
 });
 
+AboutSection.displayName = 'AboutSection';
 
 export default AboutSection;

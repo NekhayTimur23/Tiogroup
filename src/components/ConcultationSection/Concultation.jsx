@@ -34,4 +34,7 @@ const  ConcultationSection = forwardRef(({onClick}, ref ) => {
   );
 });
 
+
+ConcultationSection.displayName = 'ConcultationSection';
+
 export default ConcultationSection;
