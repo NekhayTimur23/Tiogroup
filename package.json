@@ -21,7 +21,6 @@
     "eslint-config-next": "14.0.1",
     "node-sass": "^9.0.0",
     "sass": "^1.69.5",
-    "sass-loader": "^13.3.2",
-    "phpmailer/phpmailer": "^6.8.1"
+    "sass-loader": "^13.3.2"
   }
 }
