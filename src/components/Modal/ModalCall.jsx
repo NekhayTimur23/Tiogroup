@@ -58,8 +58,8 @@ const ModalCall = ({ onClose }) => {
   return (
     <div className={styles.modalCall}>
       <div className={styles.modalOverlay}>
-        {/* <form name="form" onSubmit={handleSubmit}> */}
-        <form action="sendmail.php" name="form" method="post" >
+        <form name="form" onSubmit={handleSubmit}>
+        {/* <form action="sendmail.php" name="form" method="post" > */}
           <div className={styles.modalContainer}>
             <h1>Обратная связь</h1>
             <p>
@@ -72,21 +72,21 @@ const ModalCall = ({ onClose }) => {
                 className={styles.modalContainerInput}
                 type="name"
                 placeholder="Имя"
-                // value={name}
-                // onChange={(e) => setName(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <input
                 className={styles.modalContainerInput}
                 type="email"
                 placeholder="E-mail"
-                // value={email}
-                // onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 className={styles.modalContainerInput}
                 type="tel"
-                // value={phone}
-                // onChange={handlePhoneInput}
+                value={phone}
+                onChange={handlePhoneInput}
                 placeholder="+7"
               />
             </div>
@@ -112,6 +112,7 @@ const ModalCall = ({ onClose }) => {
 };
 
 export default ModalCall;
+
 
 };
 
