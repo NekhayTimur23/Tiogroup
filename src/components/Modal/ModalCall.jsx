@@ -14,7 +14,7 @@ const ModalCall = ({ onClose }) => {
 
     const formData = { name, email, phone };
 
-    fetch("https://api.unisender.com/ru/api/createList?format=json&api_key=6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a&title=CallbackList", {
+    fetch("https://api.unisender.com/ru/api/createList?format=json&api_key=6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a&title=CallbackList&platform=https://triogroup.vercel.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
