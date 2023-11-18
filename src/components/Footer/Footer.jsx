@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./Footer.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 
-export default function Footer({ onClick }) {
+export default function Footer({ onClickAdd, onNavigate, onClickModalPolicy }) {
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
 
@@ -10,19 +10,39 @@ export default function Footer({ onClick }) {
     <div className={styles.footer}>
       <div className={styles.footerSection}>
         <div className={styles.footerNav}>
-          <div>
+          <div
+            onClick={() => {
+              onNavigate("section1");
+            }}
+          >
             <span>ГЛАВНАЯ</span>
           </div>
-          <div>
+          <div
+            onClick={() => {
+              onNavigate("section2");
+            }}
+          >
             <span>О НАС</span>
           </div>
-          <div>
+          <div
+            onClick={() => {
+              onNavigate("section3");
+            }}
+          >
             <span>УСЛУГИ</span>
           </div>
-          <div>
+          <div
+            onClick={() => {
+              onNavigate("section4");
+            }}
+          >
             <span>КОНТАКТЫ</span>
           </div>
-          <div>
+          <div
+            onClick={() => {
+              onNavigate("section5");
+            }}
+          >
             <span>ГАЛЕРЕЯ</span>
           </div>
         </div>
@@ -46,7 +66,6 @@ export default function Footer({ onClick }) {
 
             {/* телега */}
             <a
-
               href={telegramChannelUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -93,16 +112,21 @@ export default function Footer({ onClick }) {
             </div>
             <div className={styles.button}>
               <div className={styles.buttonContainer}>
-                <ButtonComp onClick={onClick} />
+                <ButtonComp onClickAdd={onClickAdd} />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className={styles.Info}>
-        <p>Copyright © 2023 TrioGroup</p>
-        <p>ИНН: 123456789111</p>
-        <p>ОГРНИП: 1110987654321</p>
+        <div className={styles.InfoLeft}>
+          <p>Copyright © 2023 TrioGroup</p>
+          <p>ИНН: 123456789111</p>
+          <p>ОГРНИП: 1110987654321</p>
+        </div>
+        <div className={styles.InfoRight}>
+          <p onClick={onClickModalPolicy} className={styles.textPolit}>Политика конфедициальности</p>
+        </div>
       </div>
     </div>
   );

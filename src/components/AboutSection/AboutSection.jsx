@@ -3,7 +3,7 @@ import styles from "./AboutSection.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 import { forwardRef } from "react";
 
-const AboutSection = forwardRef(({onClick}, ref) => {
+const AboutSection = forwardRef(({onClickAdd}, ref) => {
 
 
   return (
@@ -47,7 +47,7 @@ const AboutSection = forwardRef(({onClick}, ref) => {
             проектами и обеспечить их успешное завершение.
           </p>
         </div>
-        <ButtonComp onClick={onClick} colorText={true}/>
+        <ButtonComp onClickAdd={onClickAdd} colorText={true}/>
       </div>
     </div>
   );

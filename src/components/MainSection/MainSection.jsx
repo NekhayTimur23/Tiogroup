@@ -5,10 +5,10 @@ import styles from "./MainSection.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 import { forwardRef } from "react";
 
-const MainSection = forwardRef(({ onClick, onNavigate }, ref) => {
+const MainSection = forwardRef(({ onClickAdd, onNavigate }, ref) => {
   return (
     <div ref={ref} className={styles.mainSection}>
-      <Header onClick={onClick}/>
+      <Header onClickAdd={onClickAdd}/>
       <NavBlock onNavigate={onNavigate} />
       <div className={styles.container}>
         <div className={styles.content}>
@@ -28,7 +28,7 @@ const MainSection = forwardRef(({ onClick, onNavigate }, ref) => {
                 соблюдение сроков и учет всех пожеланий заказчика.
               </p>
             </div>
-            <ButtonComp onClick={onClick} />
+            <ButtonComp onClickAdd={onClickAdd} />
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import styles from "./Concultation.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 import { forwardRef } from "react";
 
-const  ConcultationSection = forwardRef(({onClick}, ref ) => {
+const  ConcultationSection = forwardRef(({onClickAdd}, ref ) => {
   return (
     <div ref={ref} className={styles.concultation}>
       <div className={styles.upperConteiner}>
@@ -10,7 +10,7 @@ const  ConcultationSection = forwardRef(({onClick}, ref ) => {
           <p className={styles.textOne}>ПОЛУЧИТЕ БЕСПЛАТНУЮ</p>
           <h1 className={styles.textTwo}>КОНСУТАЦИЮ</h1>
           <p className={styles.textThree}>СПЕЦИАЛИСТА В ТЕЧЕНИЕ 30 МИНУТ</p>
-          <ButtonComp onClick={onClick}/>
+          <ButtonComp onClickAdd={onClickAdd}/>
         </div>
         <div className={styles.upperConteinerlef}>
           <p className={styles.textOne}>РАБОТАЕМ С</p>

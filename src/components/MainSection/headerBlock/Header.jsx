@@ -1,6 +1,6 @@
 import styles from "./Header.module.sass";
 
-export default function Header({ onClick }) {
+export default function Header({ onClickAdd }) {
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
 
@@ -110,7 +110,7 @@ export default function Header({ onClick }) {
             </p>
           </div>
         </div>
-        <div onClick={onClick} className={styles.bgColorPhone}>
+        <div onClick={onClickAdd} className={styles.bgColorPhone}>
           <img alt="#" src="/headerImg/phone.svg" />
         </div>
       </div>

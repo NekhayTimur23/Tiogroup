@@ -84,12 +84,22 @@
                         width: 100%
     .Info
         display: inline-flex
+        align-items: center
         padding: 2vh
         color: rgb(255, 255, 255)
         border-top: 2px solid rgb(255, 255, 255)
-        p
-            margin-right: 2.5vw
-            font-size: 0.6vw
+        .InfoLeft
+            display: flex
+            align-items: center
+            justify-content: center
+            p
+                margin-right: 2.5vw
+                font-size: 0.6vw
+        .InfoRight
+            .textPolit
+                font-size: 1vw
+                &:hover
+                    color: rgb(255,95,30)
 
 
 
