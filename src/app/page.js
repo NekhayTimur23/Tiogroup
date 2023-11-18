@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import Modal from "@/components/MainSection/Modal";
+import ModalCall from "@/components/Modal/ModalCall";
+import ModalPrivacyPolicy from "@/components/Modal/ModalPrivacyPolicy";
 import styles from "./page.module.sass";
 import Main from "@/components/MainSection/MainSection";
 import About from "@/components/AboutSection/AboutSection";
@@ -12,7 +13,26 @@ import Footer from "@/components/Footer/Footer";
 import Gallery from "@/components/Gallery/Garrery";
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalCallOpen, setIsModalCallOpen] = useState(false);
+  const [isModalPolicyOpen, setIsModalPolicyOpen] = useState(false);
+
+  const toggleModalCall = () => {
+    setIsModalCallOpen(!isModalCallOpen);
+  };
+
+  const toggleModalPolicy = () => {
+    setIsModalPolicyOpen(!isModalPolicyOpen);
+  };
+
+  useEffect(() => {
+    if (isModalCallOpen || isModalPolicyOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+  }, [isModalCallOpen, isModalPolicyOpen]);
+
+  // overflow: hidden
 
   const sectionRefs = {
     section1: useRef(null),
@@ -34,20 +54,6 @@ export default function Home() {
     }
   };
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "visible";
-    }
-  }, [isModalOpen]);
-
-  // overflow: hidden
-
   return (
     <>
       <Head>
@@ -62,18 +68,23 @@ export default function Home() {
         <Main
           ref={sectionRefs.section1}
           onNavigate={scrollToSection}
-          onClick={toggleModal}
+          onClickAdd={toggleModalCall}
         />
-        <About ref={sectionRefs.section2} onClick={toggleModal} />
+        <About ref={sectionRefs.section2} onClickAdd={toggleModalCall} />
         <Services ref={sectionRefs.section3} />
         <Gallery ref={sectionRefs.section5} />
-        <Concultation ref={sectionRefs.section4} onClick={toggleModal} />
+        <Concultation ref={sectionRefs.section4} onClickAdd={toggleModalCall} />
         <Reviews />
-        <Footer onClick={toggleModal} />
-        {isModalOpen && (
-          <Modal onClose={toggleModal}>
+        <Footer onClickModalPolicy={toggleModalPolicy}  onNavigate={scrollToSection} onClickAdd={toggleModalCall} />
+        {isModalCallOpen && (
+          <ModalCall onClose={toggleModalCall}>
             {/* Содержимое модального окна */}
-          </Modal>
+          </ModalCall>
+        )}
+        {isModalPolicyOpen && (
+          <ModalPrivacyPolicy onClose={toggleModalPolicy}>
+            {/* Содержимое модального окна */}
+          </ModalPrivacyPolicy>
         )}
       </div>
     </>
