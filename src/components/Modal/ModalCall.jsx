@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "./ModalCall.module.sass";
+import Form from "../form/Form";
 
 const ModalCall = ({ onClose }) => {
   const [name, setName] = useState("");
@@ -13,7 +14,7 @@ const ModalCall = ({ onClose }) => {
 
     const formData = { name, email, phone };
 
-    fetch("sendmail.php", {
+    fetch("https://api.unisender.com/ru/api/createList?format=json&api_key=6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a&title=CallbackList", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
+    "composer": "^4.1.0",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
@@ -21,7 +22,6 @@
     "eslint-config-next": "14.0.1",
     "node-sass": "^9.0.0",
     "sass": "^1.69.5",
-    "sass-loader": "^13.3.2",
-    "phpmailer/phpmailer": "^6.8.1"
+    "sass-loader": "^13.3.2"
   }
 }
