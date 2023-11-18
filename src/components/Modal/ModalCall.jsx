@@ -58,7 +58,7 @@ const ModalCall = ({ onClose }) => {
   return (
     <div className={styles.modalCall}>
       <div className={styles.modalOverlay}>
-        <form name={form} onSubmit={handleSubmit}>
+        <form name="form" onSubmit={handleSubmit}>
         {/* <form action="sendmail.php" name="form" method="post" > */}
           <div className={styles.modalContainer}>
             <h1>Обратная связь</h1>
