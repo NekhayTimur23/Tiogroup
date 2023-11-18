@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import styles from "./ModalCall.module.sass";
-import Form from "../form/Form";
 
 const ModalCall = ({ onClose }) => {
   const [name, setName] = useState("");
@@ -12,25 +11,26 @@ const ModalCall = ({ onClose }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const formData = { name, email, phone };
+    // Подготовка строки запроса
+    const queryParams = new URLSearchParams({
+      format: 'json',
+      api_key: '6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a',
+      title: 'CallbackList',
+      platform: 'https://triogroup.vercel.app/'
+    });
 
-    fetch("https://api.unisender.com/ru/api/createList?format=json&api_key=6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a&title=CallbackList&platform=https://triogroup.vercel.app/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
+    // Отправка GET запроса
+    fetch(`https://api.unisender.com/ru/api/createList?${queryParams.toString()}`, {
+      method: "GET"
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        onClose();
-
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-      
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      onClose();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
   };
 
   const handlePhoneInput = (e) => {
@@ -60,7 +60,7 @@ const ModalCall = ({ onClose }) => {
     <div className={styles.modalCall}>
       <div className={styles.modalOverlay}>
         <form name="form" onSubmit={handleSubmit}>
-        {/* <form action="sendmail.php" name="form" method="post" > */}
+        {/* <form action="https://api.unisender.com/ru/api/createList?format=json&api_key=6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a&title=CallbackList&platform=https://triogroup.vercel.app/" name="form" method="post" > */}
           <div className={styles.modalContainer}>
             <h1>Обратная связь</h1>
             <p>
@@ -114,7 +114,3 @@ const ModalCall = ({ onClose }) => {
 
 export default ModalCall;
 
-
-};
-
-export default ModalCall;
