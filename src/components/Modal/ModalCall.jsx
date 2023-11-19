@@ -12,7 +12,7 @@ const ModalCall = ({ onClose }) => {
   event.preventDefault();
   const formData = { name, email, phone };
 
-  const response = await fetch('/api/send', {
+  const response = await fetch('/app/api/send', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
