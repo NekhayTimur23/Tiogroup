@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import styles from "./ModalCall.module.sass";
-import Form from "../form/Form";
 
 const ModalCall = ({ onClose }) => {
   const [name, setName] = useState("");
@@ -10,28 +9,22 @@ const ModalCall = ({ onClose }) => {
   const [phone, setPhone] = useState("");
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
+  const formData = { name, email, phone };
 
-    const formData = { name, email, phone };
+  const response = await fetch('/api/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
 
-    fetch("https://api.unisender.com/ru/api/createList?format=json&api_key=6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a&title=CallbackList", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-        onClose();
+  const data = await response.json();
+  console.log(data);
+  // Обработка ответа сервера
+};
 
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-      
-  };
 
   const handlePhoneInput = (e) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
@@ -60,7 +53,7 @@ const ModalCall = ({ onClose }) => {
     <div className={styles.modalCall}>
       <div className={styles.modalOverlay}>
         <form name="form" onSubmit={handleSubmit}>
-        {/* <form action="sendmail.php" name="form" method="post" > */}
+        {/* <form action="https://api.unisender.com/ru/api/createList?format=json&api_key=6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a&title=CallbackList&platform=https://triogroup.vercel.app/" name="form" method="post" > */}
           <div className={styles.modalContainer}>
             <h1>Обратная связь</h1>
             <p>
