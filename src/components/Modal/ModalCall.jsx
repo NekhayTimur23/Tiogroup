@@ -9,29 +9,22 @@ const ModalCall = ({ onClose }) => {
   const [phone, setPhone] = useState("");
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
+  const formData = { name, email, phone };
 
-    // Подготовка строки запроса
-    const queryParams = new URLSearchParams({
-      format: 'json',
-      api_key: '6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a',
-      title: 'CallbackList',
-      platform: 'https://triogroup.vercel.app/'
-    });
+  const response = await fetch('/api/send', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  });
 
-    // Отправка GET запроса
-    fetch(`https://api.unisender.com/ru/api/createList?${queryParams.toString()}`, {
-      method: "GET"
-    })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-      onClose();
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-  };
+  const data = await response.json();
+  console.log(data);
+  // Обработка ответа сервера
+};
+
 
   const handlePhoneInput = (e) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
