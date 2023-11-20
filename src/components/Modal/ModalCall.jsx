@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./ModalCall.module.sass";
 
 const ModalCall = ({ onClose }) => {
@@ -13,7 +13,7 @@ const ModalCall = ({ onClose }) => {
     const formData = { name, email, phone };
 
     try {
-      const response = await fetch("http://localhost:3001/send-email", {
+      const response = await fetch("http://79.174.80.123:3001/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
