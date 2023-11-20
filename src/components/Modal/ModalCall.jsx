@@ -13,10 +13,12 @@ const ModalCall = ({ onClose }) => {
     const formData = { name, email, phone };
 
     try {
-      const response = await fetch("https://triogroup.vercel.app/send-email", {
+      const response = await fetch("http://localhost:3001/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "POST,PATCH,OPTIONS",
         },
         body: JSON.stringify(formData),
       });
