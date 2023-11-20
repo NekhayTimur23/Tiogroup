@@ -5,8 +5,14 @@ import cors from "cors";
 
 // Настройка Express
 const app = express();
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use(cors());
-app.use(bodyParser.json()); // для разбора application/json
+app.use(bodyParser.json());
 
 // Настройка транспорта Nodemailer
 const transporter = nodemailer.createTransport({
