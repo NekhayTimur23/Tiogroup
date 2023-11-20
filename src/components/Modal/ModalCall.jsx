@@ -9,22 +9,30 @@ const ModalCall = ({ onClose }) => {
   const [phone, setPhone] = useState("");
 
   const handleSubmit = async (event) => {
-  event.preventDefault();
-  const formData = { name, email, phone };
+    event.preventDefault();
+    const formData = { name, email, phone };
 
-  const response = await fetch('/app/send', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-  });
+    try {
+      const response = await fetch("https://triogroup.vercel.app/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-  const data = await response.json();
-  console.log(data);
-  // Обработка ответа сервера
-};
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
 
+      const data = await response.json();
+      if (data.status == "Success") {
+        onClose();
+      }
+    } catch (error) {
+      console.error("Ошибка при отправке данных:", error);
+    }
+  };
 
   const handlePhoneInput = (e) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
@@ -53,7 +61,6 @@ const ModalCall = ({ onClose }) => {
     <div className={styles.modalCall}>
       <div className={styles.modalOverlay}>
         <form name="form" onSubmit={handleSubmit}>
-        {/* <form action="https://api.unisender.com/ru/api/createList?format=json&api_key=6a5wiqizi3tsdqp6e8f3wj19hbw7akr38xbqnx3a&title=CallbackList&platform=https://triogroup.vercel.app/" name="form" method="post" > */}
           <div className={styles.modalContainer}>
             <h1>Обратная связь</h1>
             <p>
@@ -63,25 +70,31 @@ const ModalCall = ({ onClose }) => {
 
             <div className={styles.inputBlock}>
               <input
+                name="name"
                 className={styles.modalContainerInput}
                 type="name"
                 placeholder="Имя"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                required
               />
               <input
+                name="email"
                 className={styles.modalContainerInput}
                 type="email"
                 placeholder="E-mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <input
+                name="tel"
                 className={styles.modalContainerInput}
                 type="tel"
                 value={phone}
                 onChange={handlePhoneInput}
                 placeholder="+7"
+                required
               />
             </div>
           </div>
@@ -106,4 +119,3 @@ const ModalCall = ({ onClose }) => {
 };
 
 export default ModalCall;
-
