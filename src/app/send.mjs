@@ -1,7 +1,7 @@
-import nodemailer from 'nodemailer';
-import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
+import nodemailer from "nodemailer";
+import express from "express";
+import bodyParser from "body-parser";
+import cors from "cors";
 
 // Настройка Express
 const app = express();
@@ -11,26 +11,26 @@ app.use(bodyParser.json()); // для разбора application/json
 // Настройка транспорта Nodemailer
 const transporter = nodemailer.createTransport({
   // Ваши настройки SMTP
-        host: "smtp.mail.ru", // SMTP сервер вашего почтового провайдера
-        port: 465, // Порт, обычно 587 для защищенного соединения
-        secure: true, // true для 465 порта, false для других портов
-        auth: {
-        user: "grupp.trio@bk.ru", // ваша почта
-        pass: "AUhFe3vzWrLDQukTxg8T" // ваш пароль
-      }
+  host: "smtp.mail.ru", // SMTP сервер вашего почтового провайдера
+  port: 465, // Порт, обычно 587 для защищенного соединения
+  secure: true, // true для 465 порта, false для других портов
+  auth: {
+    user: "grupp.trio@bk.ru", // ваша почта
+    pass: "AUhFe3vzWrLDQukTxg8T", // ваш пароль
+  },
 });
 
 // Обработка маршрута для отправки email
-app.post('/send-email', (req, res) => {
+app.post("/send-email", (req, res) => {
   // Данные, которые вы получаете из тела запроса
   console.log(req.body);
   const { name, email, phone } = req.body;
 
   // Параметры письма, которое вы хотите отправить
   const mailOptions = {
-    from: 'grupp.trio@bk.ru', // Ваш адрес электронной почты
-    to: 'grupp.trio@bk.ru', // Получатель письма
-    subject: 'Новая заявка с сайта на обратный звонок.', // Тема письма
+    from: "grupp.trio@bk.ru", // Ваш адрес электронной почты
+    to: "grupp.trio@bk.ru", // Получатель письма
+    subject: "Новая заявка с сайта на обратный звонок.", // Тема письма
     text: `Имя: ${name}\nEmail: ${email}\nТелефон: ${phone}`, // Текст письма
   };
 
@@ -38,12 +38,14 @@ app.post('/send-email', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       // Если произошла ошибка при отправке, отправить статус 500
-      console.error('Ошибка при отправке письма:', error);
+      console.error("Ошибка при отправке письма:", error);
       res.status(500).send(error.toString());
     } else {
       // Если письмо успешно отправлено, отправить статус 200
-      console.log('Email sent: ' + info.response);
-      res.status(200).json({ status: 'Success', message: 'Email sent: ' + info.response });;
+      console.log("Email sent: " + info.response);
+      res
+        .status(200)
+        .json({ status: "Success", message: "Email sent: " + info.response });
     }
   });
 });
@@ -51,24 +53,8 @@ app.post('/send-email', (req, res) => {
 // Запуск сервера
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Сервер работает ${PORT}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const express = require("express");
 // const cors = require("cors");
@@ -90,20 +76,6 @@ app.listen(PORT, () => {
 // app.listen(PORT, () => {
 //   console.log(`Сервер был запущен на http://localhost:${PORT}/registration`);
 // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import nodemailer from 'nodemailer';
 
