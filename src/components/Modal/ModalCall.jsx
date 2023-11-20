@@ -13,7 +13,7 @@ const ModalCall = ({ onClose }) => {
     const formData = { name, email, phone };
 
     try {
-      const response = await fetch("https://triogroup.vercel.app/send-email", {
+      const response = await fetch("https://triogroup-cg3isyjw9-nekhaytimur23s-projects.vercel.app/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
