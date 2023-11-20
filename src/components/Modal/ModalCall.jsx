@@ -1,19 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./ModalCall.module.sass";
 
 const ModalCall = ({ onClose }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [name, setName] = useState("nbveh");
+  const [email, setEmail] = useState("fefe@grg.rg");
+  const [phone, setPhone] = useState("33333333333");
+
+  useEffect(() => {
+    handleSubmit()
+  }, [])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = { name, email, phone };
 
     try {
-      const response = await fetch("https://triogroup-cg3isyjw9-nekhaytimur23s-projects.vercel.app/send-email", {
+      const response = await fetch("https://triogroup.vercel.app/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
