@@ -3,9 +3,6 @@ import nodemailer from 'nodemailer';
 export default async function handler(req, res) {
 
 
-  const triogroupcom = "grupp.trio@bk.ru"
-  const YnfjNHGjr454gfbg4 = "AUhFe3vzWrLDQukTxg8T"
-
   if (req.method === 'POST') {
     const { name, email, phone } = req.body;
 
@@ -15,14 +12,14 @@ export default async function handler(req, res) {
       port: 465, // Порт, обычно 587 для защищенного соединения
       secure: true, // true для 465 порта, false для других портов
       auth: {
-        user: triogroupcom, // ваша почта
-        pass: YnfjNHGjr454gfbg4 // ваш пароль
+        user: "grupp.trio@bk.ru", // ваша почта
+        pass: "AUhFe3vzWrLDQukTxg8T" // ваш пароль
       }
     });
 
     // Определите параметры письма
     let mailOptions = {
-      from: `"Форма обратной связи" ${triogroupcom}`, // адрес отправителя
+      from: '"Форма обратной связи" grupp.trio@bk.ru ', // адрес отправителя
       to: triogroupcom, // список получателей
       subject: 'Новая заявка с сайта', // Тема письма
       text: `Имя: ${name}\nEmail: ${email}\nТелефон: ${phone}`, // текст письма
