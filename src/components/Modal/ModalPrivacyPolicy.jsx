@@ -2,8 +2,8 @@ import styles from "./ModalPrivacyPolicy.module.sass";
 
 const ModalPrivacyPolicy = ({ onClose }) => {
   return (
-    <div className={styles.modalPrivacyPolicy}>
-      <div className={styles.modalContainer}>
+    <div className={styles.modalPrivacyPolicy} onClick={onClose}>
+      <div className={styles.modalContainer}  onClick={e => e.stopPropagation()}>
         <div className={styles.modalContent}>
             <h1>Политика конфедициальности</h1>
             <p>Настоящая Политика конфиденциальности персональных данных (далее – Политика конфиденциальности) действует в отношении всей информации, которую администрация сайте может получить о Пользователе во время использования сайта Компании. Политика конфиденциальности устанавливает обязательства Администрации сайта Компании по неразглашению и обеспечению режима защиты конфиденциальности персональных данных, которые Пользователь предоставляет на сайте.</p>

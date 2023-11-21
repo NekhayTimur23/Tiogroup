@@ -9,6 +9,7 @@ export default function Footer({ onClickAdd, onNavigate, onClickModalPolicy }) {
   return (
     <div className={styles.footer}>
       <div className={styles.footerSection}>
+        <img className={styles.imgLine} alt="#" src="/footer/lineFooter.svg" />
         <div className={styles.footerNav}>
           <div
             onClick={() => {
@@ -125,7 +126,9 @@ export default function Footer({ onClickAdd, onNavigate, onClickModalPolicy }) {
           <p>ОГРНИП: 1110987654321</p>
         </div>
         <div className={styles.InfoRight}>
-          <p onClick={onClickModalPolicy} className={styles.textPolit}>Политика конфедициальности</p>
+          <p onClick={onClickModalPolicy} className={styles.textPolit}>
+            Политика конфедициальности
+          </p>
         </div>
       </div>
     </div>

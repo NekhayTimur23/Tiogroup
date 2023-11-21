@@ -1,6 +1,6 @@
 .aboutSection
     display: flex
-    height: 80vh
+    min-height: 80vh
     width: 100%
     position: relative
     .rightAboutSection
@@ -10,7 +10,7 @@
         background: linear-gradient(rgba(7, 15, 44, 0.677), rgba(28, 14, 0, 0.102)), url("/about/henry-co-3coKbdfnAFg-unsplash.jpg") center/cover
         width: 45%
         img
-            width: 10vw
+            width: calc(130px + (300 - 130)*(100vw - 1024px) / (2568 - 1024))
         .rightAboutSectionFirst
             height: 100%
             display: flex
@@ -19,34 +19,40 @@
     .leftAboutSection
         background: linear-gradient(rgba(255, 255, 255, 0.446),rgba(255, 255, 255, 0.835), rgba(255, 255, 255, 0.609)), url("/about/imgonline-com-ua-Resize-UgWaznbPTeX.jpg") center/cover
         width: 55%
+        padding: 3vw
         .textBlock
             font-family: 'Oswald', sans-serif
-            padding: 3vh 3vw 0
             p
                 margin: 3vmin 0
             .textOne
                 font-size: 2.7vmin
+                font-size: calc(20px + (43 - 20)*(100vw - 1024px) / (2568 - 1024))
                 font-weight: 200
                 color: rgb(255,95,30)
                 padding-left: 2vw 
             .textTwu
                 font-size: 7.8vmin
+                font-size: calc(59px + (90 - 30)*(100vw - 1024px) / (2568 - 1024))
                 font-weight: 700
                 color: rgb(13,13,13)
             .textThree
                 font-size: 1.9vmin
+                font-size: calc(14px + (30 - 14)*(100vw - 1024px) / (2568 - 1024))
                 font-weight: 500
                 color: rgb(87,87,87)
             .textFour
                 font-size: 2.3vmin
+                font-size: calc(17px + (36 - 17)*(100vw - 1024px) / (2568 - 1024))
                 font-weight: 200
                 color: rgb(13,13,13)
             .textFive
                 font-size: 1.9vmin
+                font-size: calc(14px + (30 - 14)*(100vw - 1024px) / (2568 - 1024))
                 font-weight: 500
                 color: rgb(87,87,87)
             .textSix
                 font-size: 2.3vmin
+                font-size: calc(17px + (36 - 17)*(100vw - 1024px) / (2568 - 1024))
                 font-weight: 40
                 color: rgb(13,13,13)
 
