@@ -1,5 +1,6 @@
 "use client";
 
+// import Carousel from "./Carousel/Carousel";
 import styles from "./ReviewsSection.module.sass";
 
 export default function ReviewsSection() {

@@ -1,8 +1,6 @@
-"use client"
-
-import Carousel from "./Carousel/Carousel"
-import { forwardRef } from "react"
-import "./Garrery.sass"
+import Carousel from "./Carousel/Carousel";
+import { forwardRef } from "react";
+import "./Garrery.sass";
 
 const Gallery = forwardRef((props, ref) => {
     return(

@@ -60,8 +60,8 @@ const ModalCall = ({ onClose }) => {
   };
 
   return (
-    <div className={styles.modalCall}>
-      <div className={styles.modalOverlay}>
+    <div className={styles.modalCall}  onClick={onClose}>
+      <div className={styles.modalOverlay} onClick={e => e.stopPropagation()}>
         <form name="form" onSubmit={handleSubmit}>
           <div className={styles.modalContainer}>
             <h1>Обратная связь</h1>
