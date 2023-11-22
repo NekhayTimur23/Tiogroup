@@ -1,0 +1,26 @@
+.phone
+    width: 100%
+    height: 100vh
+    background: rgb(0, 255, 76)
+    .phoneContainer
+        .mainSection
+            .header
+                display: flex
+                align-items: center
+                justify-content: center
+                min-height: calc(60px + (80 - 60)*(100vw - 320px) / (1024 - 320))
+                background: rgb(156, 156, 156)
+                .headerBlock
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    width: 100%
+                    padding: 0 calc(8px + (20 - 8)*(100vw - 320px) / (1024 - 320))
+                    .logo
+                        display: inline-block
+                        margin: 0 calc(1px + (3 - 1)*(100vw - 320px) / (1024 - 320))
+                    .headerButton
+                        .button
+                            width: calc(35px + (60 - 35)*(100vw - 320px) / (1024 - 320))
+                            height: calc(35px + (60 - 35)*(100vw - 320px) / (1024 - 320))
+                            background-color:  rgb(137, 19, 19)

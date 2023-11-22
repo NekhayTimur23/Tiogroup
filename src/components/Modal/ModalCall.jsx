@@ -11,9 +11,10 @@ const ModalCall = ({ onClose }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = { name, email, phone };
+    console.log(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`, 'clg для проверки имени хоста')
 
     try {
-      const response = await fetch("http://79.174.80.123:3001/send-email", {
+      const response = await fetch(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,4 +1,3 @@
-"use client";
 import Header from "./headerBlock/Header";
 import NavBlock from "./navBlock/NavBlock";
 import styles from "./MainSection.module.sass";
@@ -6,6 +5,11 @@ import ButtonComp from "../ButtonSection/ButtonComp";
 import { forwardRef } from "react";
 
 const MainSection = forwardRef(({ onClickAdd, onNavigate }, ref) => {
+
+
+
+
+
   return (
     <div ref={ref} className={styles.mainSection}>
       <Header onClickAdd={onClickAdd}/>

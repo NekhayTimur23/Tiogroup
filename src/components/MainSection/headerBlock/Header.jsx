@@ -96,7 +96,7 @@ export default function Header({ onClickAdd }) {
           Наш адрес:
         </p>
         <p className={styles.colorWhite + " " + styles.fontOswaldBold20}>
-          мо п.зареье ул. тихая д.13
+          МО п.Заречье ул. Тихая д.13
         </p>
       </div>
       <div className={styles.hederStyleAll}>
