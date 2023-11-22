@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState, useRef } from "react";
 import ModalCall from "@/components/Modal/ModalCall";
 import ModalPrivacyPolicy from "@/components/Modal/ModalPrivacyPolicy";
@@ -11,10 +12,19 @@ import Concultation from "@/components/ConcultationSection/Concultation";
 import Reviews from "@/components/ReviewsSection/ReviewsSection";
 import Footer from "@/components/Footer/Footer";
 import Gallery from "@/components/Gallery/Garrery";
+import Phone from "@/components/PhoneComponents/Phone";
 
 export default function Home() {
   const [isModalCallOpen, setIsModalCallOpen] = useState(false);
   const [isModalPolicyOpen, setIsModalPolicyOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(undefined);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleModalCall = () => {
     setIsModalCallOpen(!isModalCallOpen);
@@ -31,8 +41,6 @@ export default function Home() {
       document.body.style.overflow = "visible";
     }
   }, [isModalCallOpen, isModalPolicyOpen]);
-
-  // overflow: hidden
 
   const sectionRefs = {
     section1: useRef(null),
@@ -65,26 +73,39 @@ export default function Home() {
         />
       </Head>
       <div className={styles.main}>
-        <Main
-          ref={sectionRefs.section1}
-          onNavigate={scrollToSection}
-          onClickAdd={toggleModalCall}
-        />
-        <About ref={sectionRefs.section2} onClickAdd={toggleModalCall} />
-        <Services ref={sectionRefs.section3} />
-        <Gallery ref={sectionRefs.section5} />
-        <Concultation ref={sectionRefs.section4} onClickAdd={toggleModalCall} />
-        <Reviews />
-        <Footer onClickModalPolicy={toggleModalPolicy}  onNavigate={scrollToSection} onClickAdd={toggleModalCall} />
-        {isModalCallOpen && (
-          <ModalCall onClose={toggleModalCall}>
-            {/* Содержимое модального окна */}
-          </ModalCall>
-        )}
-        {isModalPolicyOpen && (
-          <ModalPrivacyPolicy onClose={toggleModalPolicy}>
-            {/* Содержимое модального окна */}
-          </ModalPrivacyPolicy>
+        {windowWidth >= 1024 ? (
+          <>
+            <Main
+              ref={sectionRefs.section1}
+              onNavigate={scrollToSection}
+              onClickAdd={toggleModalCall}
+            />
+            <About ref={sectionRefs.section2} onClickAdd={toggleModalCall} />
+            <Services ref={sectionRefs.section3} />
+            <Gallery ref={sectionRefs.section5} />
+            <Concultation
+              ref={sectionRefs.section4}
+              onClickAdd={toggleModalCall}
+            />
+            <Reviews />
+            <Footer
+              onClickModalPolicy={toggleModalPolicy}
+              onNavigate={scrollToSection}
+              onClickAdd={toggleModalCall}
+            />
+            {isModalCallOpen && (
+              <ModalCall onClose={toggleModalCall}>
+                {/* Содержимое модального окна */}
+              </ModalCall>
+            )}
+            {isModalPolicyOpen && (
+              <ModalPrivacyPolicy onClose={toggleModalPolicy}>
+                {/* Содержимое модального окна */}
+              </ModalPrivacyPolicy>
+            )}
+          </>
+        ) : (
+          <Phone />
         )}
       </div>
     </>
