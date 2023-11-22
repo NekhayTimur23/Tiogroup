@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./Phone.module.sass";
 import ModalNav from "./modal/ModalNav";
 import MainSectionPhone from "./mainSectionPhone/MainSectionPhone";
+import AboutSectionPhone from "./aboutSectionPhone/AboutSectionPhone";
 
 function Phone() {
   const [modalNavOn, setModalNavOn] = useState(false);
@@ -45,7 +46,10 @@ function Phone() {
             </div>
             <ModalNav modalNavOn={modalNavOn} onClose={addModalNav} />
           </div>
-          <MainSectionPhone />
+          <div className={styles.phoneSections}>
+            <MainSectionPhone />
+            <AboutSectionPhone />
+          </div>
         </div>
       </div>
     </div>

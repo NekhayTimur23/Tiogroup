@@ -2,6 +2,9 @@
     width: 100%
     min-height: 100vh
     .phoneContainer
+        .phoneSections
+            padding: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
+            background-color: rgb(238, 238, 238)
         .header
             display: flex
             width: 100%
@@ -31,9 +34,7 @@
                             width: calc(40px + (60 - 40)*(100vw - 320px) / (1024 - 320))
                             height: calc(6px + (8 - 6)*(100vw - 320px) / (1024 - 320))
                             margin: 5px
-                            transition: transform .2s ease
+                            transition: margin .2s ease
                     &:active
                         .buttonBlock
-                            transform: rotate(180deg)
-                        .buttonBlockCenter
-                            transform: rotate(-180deg)
+                            margin: 15px 0
