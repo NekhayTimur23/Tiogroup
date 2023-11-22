@@ -3,6 +3,7 @@ import styles from "./Phone.module.sass";
 import ModalNav from "./modal/ModalNav";
 import MainSectionPhone from "./mainSectionPhone/MainSectionPhone";
 import AboutSectionPhone from "./aboutSectionPhone/AboutSectionPhone";
+import ServicesSectionPhone from "./servicesSectionPhone/ServicesSectionPhone";
 
 function Phone() {
   const [modalNavOn, setModalNavOn] = useState(false);
@@ -49,6 +50,7 @@ function Phone() {
           <div className={styles.phoneSections}>
             <MainSectionPhone />
             <AboutSectionPhone />
+            <ServicesSectionPhone />
           </div>
         </div>
       </div>
