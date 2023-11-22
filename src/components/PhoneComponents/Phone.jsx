@@ -13,7 +13,9 @@ function Phone() {
                 </div>
                 <div className={styles.headerButton}>
                   <div className={styles.button}>
-                    <img src="" alt="" />
+                    <div className={styles.buttonBlock}></div>
+                    <div className={styles.buttonBlock}></div>
+                    <div className={styles.buttonBlock}></div>
                   </div>
                 </div>
               </div>
