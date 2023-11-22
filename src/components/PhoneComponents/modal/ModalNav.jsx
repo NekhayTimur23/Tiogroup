@@ -1,8 +1,8 @@
 import styles from "./ModalNav.module.sass";
 
-function ModalNav({ onClose }) {
+function ModalNav({ onClose, modalNavOn }) {
   return (
-      <div className={styles.modelNav}>
+      <div className={modalNavOn ? styles.modelNav : styles.modelNav + " " + styles.modelNavOff }>
         <div className={styles.modelNavContent}>
           <div>
             <span>ГЛАВНАЯ</span>
