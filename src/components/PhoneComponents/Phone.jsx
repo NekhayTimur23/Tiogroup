@@ -23,13 +23,13 @@ function Phone() {
                 <div className={styles.headerButton} onClick={addModalNav}>
                   <div className={styles.button}>
                     <div className={styles.buttonBlock}></div>
-                    <div className={styles.buttonBlock}></div>
-                    <div className={styles.buttonBlock}></div>
+                    <div className={styles.buttonBlock + " " + styles.buttonBlockCenter}></div>
+                    <div className={styles.buttonBlock + " " + styles.buttonBlockButtom}></div>
                   </div>
                 </div>
               </div>
             </div>
-            {modalNavOn && <ModalNav onClose={addModalNav}/>}
+            <ModalNav modalNavOn={modalNavOn} onClose={addModalNav}/>
             <div className="">frfrf</div>
           </div>
         </div>

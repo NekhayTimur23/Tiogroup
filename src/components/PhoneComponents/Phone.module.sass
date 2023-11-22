@@ -32,4 +32,9 @@
                                 width: calc(40px + (60 - 40)*(100vw - 320px) / (1024 - 320))
                                 height: calc(6px + (8 - 6)*(100vw - 320px) / (1024 - 320))
                                 margin: 5px
-                            
+                                transition: transform .2s ease
+                        &:active
+                            .buttonBlock
+                                transform: rotate(180deg)
+                            .buttonBlockCenter
+                                transform: rotate(-180deg)
