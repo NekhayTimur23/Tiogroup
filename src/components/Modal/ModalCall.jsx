@@ -11,18 +11,24 @@ const ModalCall = ({ onClose }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = { name, email, phone };
-    console.log(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`, 'clg для проверки имени хоста')
+    console.log(
+      `${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`,
+      "clg для проверки имени хоста"
+    );
 
     try {
-      const response = await fetch(`${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST,PATCH,OPTIONS",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "POST,PATCH,OPTIONS",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -61,8 +67,8 @@ const ModalCall = ({ onClose }) => {
   };
 
   return (
-    <div className={styles.modalCall}  onClick={onClose}>
-      <div className={styles.modalOverlay} onClick={e => e.stopPropagation()}>
+    <div className={styles.modalCall} onClick={onClose}>
+      <div className={styles.modalOverlay} onClick={(e) => e.stopPropagation()}>
         <form name="form" onSubmit={handleSubmit}>
           <div className={styles.modalContainer}>
             <h1>Обратная связь</h1>
