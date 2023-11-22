@@ -99,9 +99,7 @@ export default function Home() {
               </ModalCall>
             )}
             {isModalPolicyOpen && (
-              <ModalPrivacyPolicy onClose={toggleModalPolicy}>
-                {/* Содержимое модального окна */}
-              </ModalPrivacyPolicy>
+              <ModalPrivacyPolicy onClose={toggleModalPolicy}/>
             )}
           </>
         ) : (
