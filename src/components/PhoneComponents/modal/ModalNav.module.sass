@@ -1,6 +1,7 @@
 .modelNav
     position: absolute
     display: flex
+    align-items: center
     min-width: 30%
     transition: right 0.5s ease
     top: 0
@@ -35,7 +36,7 @@
     .buttonCall
         padding: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
         background-color:  rgb(255, 95, 30)
-        margin: calc(16px + (20 - 16)*(100vw - 320px) / (1024 - 320))
+        // margin: calc(16px + (20 - 16)*(100vw - 320px) / (1024 - 320))
         color: rgb(252, 252, 252)
         font-size: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
         &:active
@@ -46,5 +47,16 @@
         background-color:  rgba(126, 126, 126, 0.498)
         &:active
             background-color:  rgba(126, 126, 126, 0.212)
+    .socialNetworkBlock
+        .socialNetworkButtom
+            display: inline-flex
+            background-color: rgb(255, 95, 30)
+            padding: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
+            border-radius: 10px
+            margin: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320))
+            img
+                width: calc(20px + (40 - 20)*(100vw - 320px) / (1024 - 320))
+            &:active
+                background-color: rgb(0, 0, 0)
 .modelNavOff
     right: -100%
