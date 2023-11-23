@@ -12,13 +12,13 @@ const ModalCall = ({ onClose }) => {
     event.preventDefault();
     const formData = { name, email, phone };
     console.log(
-      `${window.location.protocol}//${window.location.hostname}:3001/send-email`,
+      `${window.location.protocol}//${window.location.hostname}:${window.location.port}+/send-email`,
       "clg для проверки имени хоста"
     );
 
     try {
       const response = await fetch(
-        `${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`,
+        `${window.location.protocol}//${window.location.hostname}:3001/send-email`,
         {
           method: "POST",
           headers: {
