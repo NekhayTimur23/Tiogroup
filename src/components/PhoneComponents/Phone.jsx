@@ -4,6 +4,7 @@ import ModalNav from "./modal/ModalNav";
 import MainSectionPhone from "./mainSectionPhone/MainSectionPhone";
 import AboutSectionPhone from "./aboutSectionPhone/AboutSectionPhone";
 import ServicesSectionPhone from "./servicesSectionPhone/ServicesSectionPhone";
+import GallerySectionPhone from "./gallerySectionPhone/GallerySectionPhone";
 
 function Phone() {
   const [modalNavOn, setModalNavOn] = useState(false);
@@ -52,6 +53,7 @@ function Phone() {
             <AboutSectionPhone />
             <ServicesSectionPhone />
           </div>
+          <GallerySectionPhone />
         </div>
       </div>
     </div>
