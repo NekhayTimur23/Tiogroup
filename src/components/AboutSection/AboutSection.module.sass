@@ -7,8 +7,11 @@
         display: flex
         align-items: center
         justify-content: space-around
-        background: linear-gradient(rgba(7, 15, 44, 0.677), rgba(28, 14, 0, 0.102)), url("/about/henry-co-3coKbdfnAFg-unsplash.jpg") center/cover
+        background: linear-gradient(rgba(7, 15, 44, 0.677), rgba(28, 14, 0, 0.102)), url("/about/henry-co-3coKbdfnAFg-unsplash.png") center/cover
         width: 45%
+        @media (max-width: 1440px)
+            background: linear-gradient(rgba(7, 15, 44, 0.677), rgba(28, 14, 0, 0.102)), url("/about/henry-co-3coKbdfnAFg-unsplashv2.png") center/cover
+
         img
             width: calc(130px + (300 - 130)*(100vw - 1024px) / (2568 - 1024))
         .rightAboutSectionFirst
@@ -17,9 +20,12 @@
             flex-direction: column
             justify-content: space-evenly
     .leftAboutSection
-        background: linear-gradient(rgba(255, 255, 255, 0.446),rgba(255, 255, 255, 0.835), rgba(255, 255, 255, 0.609)), url("/about/imgonline-com-ua-Resize-UgWaznbPTeX.jpg") center/cover
+        background: linear-gradient(rgba(255, 255, 255, 0.446),rgba(255, 255, 255, 0.835), rgba(255, 255, 255, 0.609)), url("/about/imgonline-com-ua-Resize-UgWaznbPTeX.png") center/cover
         width: 55%
         padding: 3vw
+        @media (max-width: 1440px)
+            background: linear-gradient(rgba(255, 255, 255, 0.446),rgba(255, 255, 255, 0.835), rgba(255, 255, 255, 0.609)), url("/about/imgonline-com-ua-Resize-UgWaznbPTeXv2.png") center/cover
+
         .textBlock
             font-family: 'Oswald', sans-serif
             p

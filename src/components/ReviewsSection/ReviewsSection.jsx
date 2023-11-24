@@ -14,7 +14,7 @@ export default function ReviewsSection() {
         <div className={styles.reviewsLeftBlock}>
           <div className={styles.reviewsCard}>
             <div className={styles.cardPhoto}>
-              <img alt="#" src="/reviews/team4.jpg" />
+              <img alt="#" src="/reviews/team4.png" />
             </div>
             <div className={styles.cardTextBlock}>
               <p>
@@ -34,7 +34,7 @@ export default function ReviewsSection() {
           </div>
           <div className={styles.reviewsCard}>
             <div className={styles.cardPhoto}>
-              <img alt="#" src="/reviews/team4.jpg" />
+              <img alt="#" src="/reviews/team4.png" />
             </div>
             <div className={styles.cardTextBlock}>
               <p>
