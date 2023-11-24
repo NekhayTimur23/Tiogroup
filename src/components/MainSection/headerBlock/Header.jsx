@@ -11,13 +11,11 @@ export default function Header({ onClickAdd }) {
           alt="#"
           className={styles.headerLogo}
           src="/headerImg/logo.svg"
-          width={93}
-          height={62}
         />
       </div>
       <div className={styles.hederStyleAll}>
         <div className={styles.mr20}>
-          <img alt="#" src="/headerImg/watch.svg" width={22} height={22} />
+          <img  className={styles.headerWatchImg} alt="#" src="/headerImg/watch.svg" />
         </div>
         <p
           className={
