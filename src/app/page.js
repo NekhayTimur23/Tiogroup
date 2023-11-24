@@ -19,11 +19,8 @@ export default function Home() {
   const [isModalPolicyOpen, setIsModalPolicyOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(undefined);
 
-  let windowWidthOne = window.innerWidth;
-
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
-    windowWidthOne = windowWidth
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -76,7 +73,7 @@ export default function Home() {
         />
       </Head>
       <div className={styles.main}>
-        {windowWidthOne >= 1024 ? (
+        {windowWidth >= 1024 ? (
           <>
             <Main
               ref={sectionRefs.section1}
