@@ -2,16 +2,24 @@ import { useState, useEffect } from "react";
 import ModalNav from "../modal/ModalNav";
 import styles from "./HeaderSectionPhone.module.sass";
 
-export default function HeaderSectionPhone({ modalNavOn, addModalNav }) {
-
+export default function HeaderSectionPhone() {
   const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
+    typeof window !== "undefined" ? ([window.innerWidth,"*", window.innerHeight ]) : 0
   );
+  const [modalNavOn, setModalNavOn] = useState(false);
+
+  const addModalNav = () => {
+    setTimeout(function () {
+      setModalNavOn(!modalNavOn);
+    }, 300);
+  };
 
   useEffect(() => {
     function handleResize() {
-      setWindowWidth(window.innerWidth);
+      setWindowWidth([window.innerWidth,"*", window.innerHeight]);
     }
+
+    console.log(windowWidth);
 
     // Добавить слушателя событий изменения размера окна
     window.addEventListener("resize", handleResize);
@@ -21,6 +29,7 @@ export default function HeaderSectionPhone({ modalNavOn, addModalNav }) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
 
@@ -43,11 +52,11 @@ export default function HeaderSectionPhone({ modalNavOn, addModalNav }) {
             <img src="/headerimg/call.svg" alt="" />
             <div className={styles.headerPhoneCallText}>
               <p>+7(000) 000-00-00</p>
-              <p>+7(000) 000-00-00</p>
+              <p>{windowWidth}px</p>
             </div>
           </div>
         </div>
-        <div className={styles.headerPhoneButtonModal}>
+        <div onClick={addModalNav} className={styles.headerPhoneButtonModal}>
           <div className={styles.headerButton}></div>
           <div className={styles.headerButton}></div>
           <div className={styles.headerButton}></div>

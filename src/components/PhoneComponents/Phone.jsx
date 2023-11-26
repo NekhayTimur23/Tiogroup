@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Phone.module.sass";
 import MainSectionPhone from "./mainSectionPhone/MainSectionPhone";
 import AboutSectionPhone from "./aboutSectionPhone/AboutSectionPhone";
@@ -7,29 +6,17 @@ import GallerySectionPhone from "./gallerySectionPhone/GallerySectionPhone";
 import HeaderSectionPhone from "./headerSectionPhone/HeaderSectionPhone";
 
 function Phone() {
-  const [modalNavOn, setModalNavOn] = useState(false);
-
-  const addModalNav = () => {
-    setTimeout(function () {
-      setModalNavOn(!modalNavOn);
-    }, 300);
-  };
 
   return (
     <div
       className={styles.phone}
-      onClick={() => setModalNavOn(false)}
-      onScroll={addModalNav}
     >
       <div
         className={styles.phoneContainer}
-        onClick={(e) => e.stopPropagation()}
       >
         <div className={styles.phoneContent}>
           <div className={styles.phoneSections}>
             <HeaderSectionPhone
-              modalNavOn={modalNavOn}
-              addModalNav={addModalNav}
             />
             <MainSectionPhone />
             <AboutSectionPhone />

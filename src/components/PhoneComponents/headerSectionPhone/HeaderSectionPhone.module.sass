@@ -5,6 +5,8 @@
         display: flex
         justify-content: space-around
         padding: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320)) calc(70px + (80 - 70)*(100vw - 320px) / (1024 - 320)) calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320)) calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320))
+        @media (max-width: 500px)
+            justify-content: space-around
         .headerPhoneLogo, .headerPhoneEmail, .headerPhoneCall
             display: flex
             align-items: center
@@ -25,6 +27,8 @@
                 font-size: calc(14px + (16 - 14)*(100vw - 320px) / (1024 - 320))
             & p:first-child
                 font-weight: bold
+            @media (max-width: 500px)
+                display: none
         .headerPhoneCall
             img
                 width: calc(18px + (20 - 18)*(100vw - 320px) / (1024 - 320))
