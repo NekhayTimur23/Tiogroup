@@ -22,18 +22,18 @@ export default function HeaderSectionPhone() {
       <div className={styles.headerPhoneContainer}>
         <div className={styles.headerPhoneContent}>
           <div className={styles.headerPhoneLogo}>
-            <img src="/headerimg/logoBlack1.svg" alt="#" />
+            <img src="/headerimg/logoBlack.svg" alt="#" />
             <p>СТРОИТЕЛЬНАЯ КОМПАНИЯ</p>
           </div>
           <div className={styles.headerPhoneEmail}>
-            <img src="/headerimg/mail1.svg" alt="3" />
+            <img src="/headerimg/mail.svg" alt="3" />
             <div className={styles.headerPhoneEmailText}>
               <p>Email:</p>
               <p>grupp.trio@bk.ru</p>
             </div>
           </div>
           <div className={styles.headerPhoneCall}>
-            <img src="/headerimg/call1.svg" alt="" />
+            <img src="/headerimg/call.svg" alt="" />
             <div className={styles.headerPhoneCallText}>
               <p>+7(000) 000-00-00</p>
               <p>+7(000) 000-00-00</p>
