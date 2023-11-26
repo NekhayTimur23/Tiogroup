@@ -1,11 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import ModalNav from "../modal/ModalNav";
 import styles from "./HeaderSectionPhone.module.sass";
 
 export default function HeaderSectionPhone() {
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? ([window.innerWidth,"*", window.innerHeight ]) : 0
-  );
   const [modalNavOn, setModalNavOn] = useState(false);
 
   const addModalNav = () => {
@@ -14,21 +13,6 @@ export default function HeaderSectionPhone() {
     }, 300);
   };
 
-  useEffect(() => {
-    function handleResize() {
-      setWindowWidth([window.innerWidth,"*", window.innerHeight]);
-    }
-
-    console.log(windowWidth);
-
-    // Добавить слушателя событий изменения размера окна
-    window.addEventListener("resize", handleResize);
-
-    // Убрать слушателя событий при размонтировании компонента
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
@@ -44,7 +28,7 @@ export default function HeaderSectionPhone() {
           <div className={styles.headerPhoneEmail}>
             <img src="/headerimg/mail.svg" alt="3" />
             <div className={styles.headerPhoneEmailText}>
-              <p>Email:{windowWidth}px</p>
+              <p>Email:</p>
               <p>grupp.trio@bk.ru</p>
             </div>
           </div>
@@ -52,7 +36,7 @@ export default function HeaderSectionPhone() {
             <img src="/headerimg/call.svg" alt="" />
             <div className={styles.headerPhoneCallText}>
               <p>+7(000) 000-00-00</p>
-              <p>{windowWidth}px</p>
+              <p>+7(000) 000-00-00</p>
             </div>
           </div>
         </div>

@@ -1,30 +1,59 @@
 .mainPhone
-    max-width: 100%
-    min-height: 10vh
-    border-radius: 10px
-    background: #fff
-    // background: url('/mainimg/danny-lau-HlAmpNz6nOc-unsplash.jpg') center/cover
-    overflow: hidden
-    margin-bottom: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
     .mainPhoneContainer
-        .mainBlock
-            display: flex
-            flex-direction: column
-            justify-content: space-around
-            background: linear-gradient(rgba(8, 19, 45, 0.799), rgba(0, 8, 28, 0)), url('/mainimg/danny-lau-HlAmpNz6nOc-unsplashv2.png') center/cover
-            padding: calc(30px + (40 - 30)*(100vw - 320px) / (1024 - 320))
-            color: rgb(255, 255, 255)
-            .mainBlockTop
-                margin-bottom: calc(70px + (100 - 70)*(100vw - 320px) / (1024 - 320))
-                .mainTextOne
-                    font-size: calc(14px + (30 - 14)*(100vw - 320px) / (1024 - 320))
-                .mainTextTwo
-                    font-size: calc(20px + (60 - 20)*(100vw - 320px) / (1024 - 320))
-                    color: rgb(255, 95, 30)
-                .mainTopFree
-                    font-size: calc(20px + (60 - 20)*(100vw - 320px) / (1024 - 320))
-                .mainTopFour
-                    font-size: calc(10px + (20 - 10)*(100vw - 320px) / (1024 - 320))
-            .mainBlockBottom
-                font-size: calc(14px + (20 - 14)*(100vw - 320px) / (1024 - 320))
-
+        color: rgb(255, 255, 255)
+        .mainPhoneTopBlock
+            min-height: 30vh 
+            background: linear-gradient(rgba(67, 57, 57, 0.192), rgba(68, 58, 58, 0.192)), url('/mainimg/imgonline-com-ua-Resize-qYbFe0u51Cv2.png') center/cover
+            padding: calc(50px + (70 - 50)*(100vw - 320px) / (1024 - 320)) calc(30px + (50 - 30)*(100vw - 320px) / (1024 - 320))
+            .textOne
+                font-size: calc(20px + (32 - 20)*(100vw - 320px) / (1024 - 320))
+                font-weight: 200
+            .textTwo
+                font-size: calc(30px + (60 - 30)*(100vw - 320px) / (1024 - 320))
+                font-weight: bold
+                color: rgb(255, 95, 30)
+            .textFree
+                font-size: calc(30px + (60 - 30)*(100vw - 320px) / (1024 - 320))
+                font-weight: bold
+                margin-bottom:  calc(3px + (5 - 3)*(100vw - 320px) / (1024 - 320))
+            .textFour
+                font-size: calc(10px + (20 - 10)*(100vw - 320px) / (1024 - 320))
+                font-weight: 200
+                letter-spacing: 4px
+        .mainPhoneBottomBlock
+            position: relative
+            min-height: 20vh 
+            background: rgb(0, 0, 0)
+            padding: calc(30px + (50 - 30)*(100vw - 320px) / (1024 - 320))
+            color: rgb(215, 215, 215)
+            .bottomBlockFirst
+                margin-bottom: calc(40px + (60 - 40)*(100vw - 320px) / (1024 - 320))
+                img
+                    position: absolute
+                    top: 0px
+                    opacity: 30%
+                    width: calc(200px + (300 - 200)*(100vw - 320px) / (1024 - 320))
+                p
+                    margin-left: auto
+                    width:  calc(200px + (800 - 200)*(100vw - 320px) / (1024 - 320))
+                    text-align: right
+                    font-size: calc(16px + (26 - 16)*(100vw - 320px) / (1024 - 320))
+                    font-weight: 200
+            .bottomBlockSecond
+                display: flex
+                align-items: center
+                .gbBlackImg
+                    position: relative
+                    right: calc(-60px + (-94 - -60)*(100vw - 320px) / (1024 - 320))
+                    height: calc(260px + (200 - 260)*(100vw - 320px) / (1024 - 320))
+                    width: calc(400px + (700 - 400)*(100vw - 320px) / (1024 - 320))
+                    border-radius: 25px
+                    background: linear-gradient(rgba(67, 57, 57, 0.192), rgba(68, 58, 58, 0.192)), url('/mainimg/vincent-chan-6bSi7Huo.png') center/cover
+                    overflow: hidden
+                p
+                    width:  100%
+                    text-align: left
+                    font-size: calc(14px + (26 - 14)*(100vw - 320px) / (1024 - 320))
+                    font-weight: 200
+                    span
+                        font-size: calc(30px + (38 - 30)*(100vw - 320px) / (1024 - 320))
