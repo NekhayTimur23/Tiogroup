@@ -6,22 +6,16 @@ import GallerySectionPhone from "./gallerySectionPhone/GallerySectionPhone";
 import HeaderSectionPhone from "./headerSectionPhone/HeaderSectionPhone";
 
 function Phone() {
-
   return (
-    <div
-      className={styles.phone}
-    >
-      <div
-        className={styles.phoneContainer}
-      >
+    <div className={styles.phone}>
+      <div className={styles.phoneContainer}>
         <div className={styles.phoneContent}>
           <div className={styles.phoneSections}>
-            <HeaderSectionPhone
-            />
+            <HeaderSectionPhone />
             <MainSectionPhone />
             <AboutSectionPhone />
             <ServicesSectionPhone />
-          <GallerySectionPhone />
+            <GallerySectionPhone />
           </div>
         </div>
       </div>

@@ -73,7 +73,7 @@ export default function Home() {
         />
       </Head>
       <div className={styles.main}>
-        {windowWidth >= 1024 ? (
+        {windowWidth >= 1050 ? (
           <>
             <Main
               ref={sectionRefs.section1}
