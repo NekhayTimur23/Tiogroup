@@ -16,7 +16,7 @@ export default function HeaderSectionPhone({ modalNavOn, addModalNav }) {
           <div className={styles.headerPhoneEmail}>
             <img src="/headerimg/mail.svg" alt="3" />
             <div className={styles.headerPhoneEmailText}>
-              <p>Email:</p>
+              <p>Email: {window.innerWidth}px</p>
               <p>grupp.trio@bk.ru</p>
             </div>
           </div>
@@ -29,9 +29,9 @@ export default function HeaderSectionPhone({ modalNavOn, addModalNav }) {
           </div>
         </div>
         <div className={styles.headerPhoneButtonModal}>
-            <div className={styles.headerButton}></div>
-            <div className={styles.headerButton}></div>
-            <div className={styles.headerButton}></div>
+          <div className={styles.headerButton}></div>
+          <div className={styles.headerButton}></div>
+          <div className={styles.headerButton}></div>
         </div>
         <ModalNav modalNavOn={modalNavOn} onClose={addModalNav} />
       </div>
