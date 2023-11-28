@@ -1,11 +1,12 @@
 import styles from "./ModalNav.module.sass";
 
-function ModalNav({ onClose, modalNavOn }) {
+function ModalNav({ addModalNav, modalNavOn }) {
+
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
 
   return (
-    <div
+    <div onClick={ (e) => e.stopPropagation()}
       className={
         modalNavOn
           ? styles.modelNav
@@ -59,7 +60,7 @@ function ModalNav({ onClose, modalNavOn }) {
         </div>
       </div>
       <div className={styles.bottomCloseBox}>
-        <div className={styles.buttonClose} onClick={onClose}>
+        <div className={styles.buttonClose} onClick={addModalNav}>
           <span>ЗАКРЫТЬ</span>
         </div>
       </div>
