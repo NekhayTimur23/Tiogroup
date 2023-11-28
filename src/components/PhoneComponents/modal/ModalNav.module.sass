@@ -2,66 +2,120 @@
     position: absolute
     display: flex
     align-items: center
-    min-width: 30%
     transition: right 0.5s ease
     top: 0
     right: 0
     min-width: 10vh
+    max-height: 90vh
     flex-direction: column
-    padding: 20px  calc(20px + (40 - 20)*(100vw - 320px) / (1024 - 320))
-    background: rgb(255, 255, 255)
+    padding: 0  calc(20px + (40 - 20)*(100vw - 320px) / (1024 - 320)) 20px
+    background: rgb(224, 224, 224) 
     border-radius: 0 0 0 10px
     box-shadow:  -5px 5px 10px rgba(0, 0, 0, 0.35)
     z-index: 1000
     .modelNavContent
-        display: block
+        display: flex
+        flex-direction: column
+        flex-wrap: nowrap
+        margin: calc(8px + (10 - 8)*(100vw - 320px) / (1024 - 320))
         div
-            margin: 10px 0
             padding: calc(16px + (20 - 16)*(100vw - 320px) / (1024 - 320))
-            border: 1px solid rgb(62, 62, 62)
-            border-radius: calc(5px + (10 - 5)*(100vw - 320px) / (1024 - 320))
+            border-bottom: 1px solid rgb(62, 62, 62)
             text-align: center
             transition: background-color .3s ease, color .3s ease
+            &:last-child
+                border: none
             span
                 margin: 0 calc(20px + (40 - 20)*(100vw - 320px) / (1024 - 320))
                 font-size:  calc(16px + (20 - 16)*(100vw - 320px) / (1024 - 320))
             &:active
                 background-color: rgb(129, 129, 129)
                 color: rgb(246, 246, 246)
-    .button
-        display: inline
-        margin: auto
-        border-radius: 5px
-        transition: background-color .3s ease, color .3s ease
-        user-select: none
-    .buttonCall
-        padding: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
-        background-color:  rgb(255, 95, 30)
-        // margin: calc(16px + (20 - 16)*(100vw - 320px) / (1024 - 320))
-        color: rgb(252, 252, 252)
-        font-size: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
-        &:active
-            background-color:  rgba(255, 94, 30, 0.535)
-            color: rgb(38, 38, 38)
-        @media ( min-width: 450px) 
-            display: none
-    .buttonClose
-        padding: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320)) 
-        background-color:  rgba(126, 126, 126, 0.498)
-        &:active
-            background-color:  rgba(126, 126, 126, 0.212)
-    .socialNetworkBlock
-        .socialNetworkButtom
-            display: inline-flex
-            background-color: rgb(255, 95, 30)
-            padding: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
+    
+    
+    .bottomCallBox
+        position: relative
+        width: calc(120px + (120 - 120) * (100vw - 320px) / (1024 - 320))
+        height: calc(60px + (60 - 60) * (100vw - 320px) / (1024 - 320))
+        margin-bottom: 10px
+        .buttonCall
+            display: flex
+            align-items: center
+            justify-content: center
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
             border-radius: 10px
-            margin: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320))
-            img
-                width: calc(20px + (40 - 20)*(100vw - 320px) / (1024 - 320))
+            user-select: none
+            padding: calc(8px + (10 - 8) * (100vw - 320px) / (1024 - 320))
+            background-color: rgb(255, 95, 30)
+            color: rgb(255, 255, 255)
+            font-size: calc(15px + (20 - 15) * (100vw - 320px) / (1024 - 320))
+            box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.855), 10px 10px 15px rgba(0, 0, 0, 0.228)
+            transition: .2s ease
+            margin-bottom: 10px
             &:active
-                background-color: rgb(0, 0, 0)
-        @media (min-width: 600px)
+                font-size: calc(14px + (19 - 15) * (100vw - 320px) / (1024 - 320))
+                box-shadow:  -10px -10px 15px rgba(255, 255, 255, 0.344), 10px 10px 15px rgba(0, 0, 0, 0.044) , inset -10px -10px 15px rgba(255, 126, 75, 0.727), inset 10px 10px 15px rgba(0, 0, 0, 0.16)
+                background-color: rgb(255, 95, 30)
+        @media ( min-width: 505px) 
             display: none
+    .socialNetworkBlock
+        display: flex
+        margin-bottom: 20px
+        .bottomSocBox
+            position: relative
+            width: calc(60px + (60 - 60) * (100vw - 320px) / (1024 - 320))
+            height: calc(60px + (60 - 60) * (100vw - 320px) / (1024 - 320))
+            border-radius: 20px
+            box-shadow: -7px -7px 7px rgba(255, 255, 255, 0.5), 7px 7px 7px rgba(0, 0, 0, 0.16)
+            transition: 0.1s ease 
+            margin: 0 10px
+            .bottomImg
+                display: flex
+                align-items: center
+                justify-content: center
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                .img
+                    width: calc(35px + (40 - 35) * (100vw - 320px) / (700 - 320))
+                    transition: 0.1s ease 
+            &:active
+                box-shadow:  -7px -7px 10px rgba(255, 255, 255, 0.344), 7px 7px 10px rgba(0, 0, 0, 0.044) , inset -10px -10px 15px rgba(255, 255, 255, 0.727), inset 10px 10px 15px rgba(0, 0, 0, 0.16)
+                background-color: rgb(220, 220, 220)
+                .img
+                    width: calc(30px + (35 - 30) * (100vw - 320px) / (700 - 320))
+        @media (min-width: 700px)
+            display: none
+    .bottomCloseBox
+        position: relative
+        width: calc(60px + (90 - 60) * (100vw - 320px) / (1024 - 320))
+        height: calc(35px + (50 - 35) * (100vw - 320px) / (1024 - 320))
+        .buttonClose
+            display: flex
+            align-items: center
+            justify-content: center
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            border-radius: 10px
+            user-select: none
+            padding: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320)) 
+            background-color: rgb(235, 235, 235)
+            font-size: calc(12px + (14 - 12) * (100vw - 320px) / (1024 - 320))
+            color: rgb(62, 62, 62)
+            box-shadow: -10px -10px 12px rgba(255, 255, 255, 0.5), 10px 10px 12px rgba(0, 0, 0, 0.16)
+            transition: 0.1s ease
+            &:active
+                font-size: calc(11px + (13 - 11) * (100vw - 320px) / (1024 - 320))
+                box-shadow:  -10px -10px 12px rgba(255, 255, 255, 0.5), 10px 10px 12px rgba(0, 0, 0, 0.16) , inset -10px -10px 15px rgba(255, 255, 255, 0.727), inset 10px 10px 15px rgba(0, 0, 0, 0.16)
+                background-color: rgb(220, 220, 220)
 .modelNavOff
     right: -100%

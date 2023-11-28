@@ -29,6 +29,14 @@
                 font-weight: bold
             @media (max-width: 500px)
                 display: none
+        .headerPhoneSocialNetwork
+            display: flex
+            align-items: center
+            img
+                width: calc(40px + (45 - 40)*(100vw - 650px) / (1024 - 650))
+                margin: 0 calc(7px + (10 - 7)*(100vw - 650px) / (1024 - 650))
+            @media (max-width: 700px)
+                display: none
         .headerPhoneCall
             img
                 margin-right: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320))

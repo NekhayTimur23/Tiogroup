@@ -34,17 +34,17 @@ export default function Footer({ onClickAdd, onNavigate, onClickModalPolicy }) {
           </div>
           <div
             onClick={() => {
-              onNavigate("section4");
-            }}
-          >
-            <span>КОНТАКТЫ</span>
-          </div>
-          <div
-            onClick={() => {
               onNavigate("section5");
             }}
           >
             <span>ГАЛЕРЕЯ</span>
+          </div>
+          <div
+            onClick={() => {
+              onNavigate("section4");
+            }}
+          >
+            <span>КОНТАКТЫ</span>
           </div>
         </div>
         <div className={styles.footerCocialNetwork}>

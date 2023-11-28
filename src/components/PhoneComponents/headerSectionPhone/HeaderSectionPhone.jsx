@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ModalNav from "../modal/ModalNav";
 import styles from "./HeaderSectionPhone.module.sass";
 import { LuMail } from "react-icons/lu";
@@ -33,6 +33,14 @@ export default function HeaderSectionPhone() {
               <p>Email:</p>
               <p>grupp.trio@bk.ru</p>
             </div>
+          </div>
+          <div className={styles.headerPhoneSocialNetwork}>
+            <a href={whatsAppChannelUrl}>
+              <img src="/headerImg/SocialMedia/Whatsapp.svg" alt="#" />
+            </a>
+            <a href={telegramChannelUrl}>
+              <img src="/headerImg/SocialMedia/Telegram.svg" alt="#" />
+            </a>
           </div>
           <div className={styles.headerPhoneCall}>
             <img src="/headerimg/phoneSecond.svg" alt="#" />
