@@ -1,12 +1,12 @@
 .concultation
-    height: 90vh
+    min-height: 10vh
     width: 100%
     background: linear-gradient(rgba(87, 78, 51, 0.308), rgba(87, 78, 51, 0.43), rgba(87, 78, 51, 0.416)), url('/consultation/eric-wang-umD2Bj4FmMU-unsplash.png') center/cover
     @media (max-width: 1440px)
         background: linear-gradient(rgba(87, 78, 51, 0.308), rgba(87, 78, 51, 0.43), rgba(87, 78, 51, 0.416)), url('/consultation/eric-wang-umD2Bj4FmMU-unsplashv2.png') center/cover
 
     .upperConteiner
-        height: 70%
+        min-height: 60vh
         display: flex
         align-items: center
         justify-content: space-around
@@ -19,19 +19,23 @@
                 font-size: 3.9vw
                 font-weight: 700
                 color: rgb(255, 255, 255)
-                padding-left: 1vw
+                @media ( max-width: 1050px)
+                    font-size: calc(20px + (40 - 20)*(100vw - 320px) / (1050 - 320))
             .textTwo
                 font-family: 'Oswald', sans-serif
                 font-size: 6.6vw
                 font-weight: 700
                 color: rgb(255,95,30)
+                @media ( max-width: 1050px)
+                    font-size: calc(20px + (60 - 20)*(100vw - 320px) / (1050 - 320))
             .textThree
                 font-family: 'Oswald', sans-serif
                 font-size: 2.8vw
                 font-weight: 200
                 color: rgb(255, 255, 255)
                 margin-bottom: 2.4vw
-                padding-left: 1.5vw
+                @media ( max-width: 1050px)
+                    font-size: calc(20px + (40 - 20)*(100vw - 320px) / (1050 - 320))
         .upperConteinerlef
             display: inline-flex
             flex-direction: column
@@ -58,17 +62,71 @@
                 font-size: 5vmin
                 font-weight: 200
                 color: rgb(255, 255, 255)
+            @media ( max-width: 750px)
+                display: none
+        @media ( max-width: 750px)
+            min-height: 1vh
+            padding: calc(30px + (50 - 30)*(100vw - 320px) / (750 - 320)) 0
+            .upperConteinerRight
+                .textThree
+                    margin-bottom: calc(30px + (40 - 30)*(100vw - 320px) / (750 - 320))
     .lowerConteiner
-        height: 30%
+        min-height: 1vh
         background: linear-gradient(rgba(255, 255, 255, 0.308), rgba(255, 255, 255, 0.43), rgba(255, 255, 255, 0.416)) center/cover no-repeat fixed
         display: flex
         align-items: center
         justify-content: space-around
-        padding: 0 15vw
-        div
-            height: 100%
-            display: flex
-            align-items: center
-            justify-content: center
+        padding: 0  calc(20px + (40 - 20)*(100vw - 320px) / (1050 - 320))
+        .lowerConteinerBox
+            margin: calc(10px + (20 - 7)*(100vw - 320px) / (2568 - 320)) 0
             img
-                height: 68%
+                height: auto
+                width: 200px
+                width: calc(150px + (350 - 150)*(100vw - 750px) / (2568 - 750))
+            h4
+                font-size: 20px
+                font-size: calc(16px + (30 - 16)*(100vw - 750px) / (2568 - 750))
+            p
+                font-size: 16px
+                font-size: calc(10px + (20 - 10)*(100vw - 750px) / (2568 - 750))
+        @media ( max-width: 750px)
+            flex-direction: column
+            .lowerConteinerBox
+                width: 100%
+                display: flex
+                align-items: center
+                .lowerConteinerImg
+                    width: 40%
+                    display: flex
+                    justify-content: right
+                    margin-right: 10%
+                    img
+                        width: calc(120px + (200 - 150)*(100vw - 550px) / (750 - 550))
+                .lowerConteinerText
+                    width: 50%
+                    h4
+                        font-size: calc(14px + (20 - 14)*(100vw - 550px) / (750 - 550))
+                    p
+                        font-size: calc(10px + (16 - 10)*(100vw - 550px) / (750 - 550))
+        @media ( max-width: 550px)
+            .lowerConteinerBox
+                flex-direction: column
+                .lowerConteinerImg
+                    width: auto
+                    img
+                        width: 200px
+                .lowerConteinerText
+                    width: auto
+                    h4
+                        font-size: 20px
+                    p
+                        font-size: 16px
+
+
+
+
+
+
+
+
+

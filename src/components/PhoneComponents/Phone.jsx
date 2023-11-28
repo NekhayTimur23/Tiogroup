@@ -4,6 +4,7 @@ import AboutSectionPhone from "./aboutSectionPhone/AboutSectionPhone";
 import ServicesSectionPhone from "./servicesSectionPhone/ServicesSectionPhone";
 import GallerySectionPhone from "./gallerySectionPhone/GallerySectionPhone";
 import HeaderSectionPhone from "./headerSectionPhone/HeaderSectionPhone";
+import ConsultationSectionPhone from "./consultationSectionPhone/ConsultationSectionPhone";
 
 function Phone() {
   return (
@@ -15,6 +16,7 @@ function Phone() {
             <MainSectionPhone />
             <AboutSectionPhone />
             <ServicesSectionPhone />
+            < ConsultationSectionPhone />
             <GallerySectionPhone />
           </div>
         </div>

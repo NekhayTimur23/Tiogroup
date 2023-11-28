@@ -29,26 +29,39 @@ function ModalNav({ onClose, modalNavOn }) {
           <span>ГАЛЕРЕЯ</span>
         </div>
       </div>
-      <div className={styles.buttonCall + " " + styles.button}>
-        <span>Заказать звонок</span>
+      <div className={styles.bottomCallBox}>
+        <div className={styles.buttonCall}>
+          <span>Заказать звонок</span>
+        </div>
       </div>
       <div className={styles.socialNetworkBlock}>
-        <a href={whatsAppChannelUrl}>
-          <div className={styles.socialNetworkButtom}>
-            <img src="/footer/whatsApp.svg" alt="#" />
-          </div>
-        </a>
-        <a href={telegramChannelUrl}>
-          <div  className={styles.socialNetworkButtom}>
-            <img src="/headerImg/telegram.svg" alt="#" />
-          </div>
-        </a>
+        <div className={styles.bottomSocBox}>
+          <a>
+            <div className={styles.bottomImg}>
+              <img
+                className={styles.img}
+                src="/headerImg/SocialMedia/Whatsapp2.svg"
+                alt="#"
+              />
+            </div>
+          </a>
+        </div>
+        <div className={styles.bottomSocBox}>
+          <a href={telegramChannelUrl}>
+            <div className={styles.bottomImg}>
+              <img
+                className={styles.img}
+                src="/headerImg/SocialMedia/Telegram2.svg"
+                alt="#"
+              />
+            </div>
+          </a>
+        </div>
       </div>
-      <div
-        className={styles.buttonClose + " " + styles.button}
-        onClick={onClose}
-      >
-        <span>ЗАКРЫТЬ</span>
+      <div className={styles.bottomCloseBox}>
+        <div className={styles.buttonClose} onClick={onClose}>
+          <span>ЗАКРЫТЬ</span>
+        </div>
       </div>
     </div>
   );
