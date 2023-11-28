@@ -1,25 +1,16 @@
-"use client";
 
-import { useState } from "react";
 import ModalNav from "../modal/ModalNav";
 import styles from "./HeaderSectionPhone.module.sass";
 import { LuMail } from "react-icons/lu";
 
-export default function HeaderSectionPhone() {
-  const [modalNavOn, setModalNavOn] = useState(false);
-
-  const addModalNav = () => {
-    setTimeout(function () {
-      setModalNavOn(!modalNavOn);
-    }, 300);
-  };
+export default function HeaderSectionPhone({modalNavOn, addModalNav}) {
 
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
 
   return (
     <div className={styles.headerPhone}>
-      <div className={styles.headerPhoneContainer}>
+      <div className={styles.headerPhoneContainer} >
         <div className={styles.headerPhoneContent}>
           <div className={styles.headerPhoneLogo}>
             <img src="/headerimg/logoSecond.svg" alt="#" />
@@ -34,14 +25,6 @@ export default function HeaderSectionPhone() {
               <p>grupp.trio@bk.ru</p>
             </div>
           </div>
-          <div className={styles.headerPhoneSocialNetwork}>
-            <a href={whatsAppChannelUrl}>
-              <img src="/headerImg/SocialMedia/Whatsapp.svg" alt="#" />
-            </a>
-            <a href={telegramChannelUrl}>
-              <img src="/headerImg/SocialMedia/Telegram.svg" alt="#" />
-            </a>
-          </div>
           <div className={styles.headerPhoneCall}>
             <img src="/headerimg/phoneSecond.svg" alt="#" />
             <div className={styles.headerPhoneCallText}>
@@ -55,7 +38,7 @@ export default function HeaderSectionPhone() {
           <div className={styles.headerButton}></div>
           <div className={styles.headerButton}></div>
         </div>
-        <ModalNav modalNavOn={modalNavOn} onClose={addModalNav} />
+        <ModalNav modalNavOn={modalNavOn} addModalNav={addModalNav} />
       </div>
     </div>
   );
