@@ -20,7 +20,7 @@
         flex-wrap: nowrap
         margin: calc(8px + (10 - 8)*(100vw - 320px) / (1024 - 320))
         div
-            padding: calc(16px + (20 - 16)*(100vw - 320px) / (1024 - 320))
+            padding: calc(10px + (16 - 10)*(100vmin - 300px) / (450 - 300))
             border-bottom: 1px solid rgb(62, 62, 62)
             text-align: center
             transition: background-color .3s ease, color .3s ease
@@ -35,10 +35,12 @@
     
     
     .bottomCallBox
+        display: inline-block
         position: relative
-        width: calc(120px + (120 - 120) * (100vw - 320px) / (1024 - 320))
-        height: calc(60px + (60 - 60) * (100vw - 320px) / (1024 - 320))
-        margin-bottom: 10px
+        width: calc(110px + (120 - 100) * (100vw - 320px) / (500 - 320))
+        height: calc(40px + (40 - 40) * (100vw - 320px) / (500 - 320))
+        margin-bottom: 20px
+        border-radius: 7px
         .buttonCall
             display: flex
             align-items: center
@@ -48,17 +50,16 @@
             left: 0
             right: 0
             bottom: 0
-            border-radius: 10px
+            border-radius: 7px
             user-select: none
             padding: calc(8px + (10 - 8) * (100vw - 320px) / (1024 - 320))
             background-color: rgb(255, 95, 30)
             color: rgb(255, 255, 255)
-            font-size: calc(15px + (20 - 15) * (100vw - 320px) / (1024 - 320))
+            font-size: 12px
             box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.855), 10px 10px 15px rgba(0, 0, 0, 0.228)
             transition: .2s ease
-            margin-bottom: 10px
             &:active
-                font-size: calc(14px + (19 - 15) * (100vw - 320px) / (1024 - 320))
+                font-size: 11.5px
                 box-shadow:  -10px -10px 15px rgba(255, 255, 255, 0.344), 10px 10px 15px rgba(0, 0, 0, 0.044) , inset -10px -10px 15px rgba(255, 126, 75, 0.727), inset 10px 10px 15px rgba(0, 0, 0, 0.16)
                 background-color: rgb(255, 95, 30)
         @media ( min-width: 505px) 

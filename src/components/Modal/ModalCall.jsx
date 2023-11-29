@@ -110,12 +110,12 @@ const ModalCall = ({ onClose }) => {
           <div className={styles.buttonBlock}>
             <div className={styles.buttonInput}>
               <button type="submit" className={styles.buttonCall}>
-                Заказать звонок
+                ЗАКАЗАТЬ ЗВОНОК
               </button>
             </div>
 
             <div className={styles.closeButton} onClick={onClose}>
-              <div className={styles.buttonCloseInput}>Закрыть</div>
+              <div className={styles.buttonCloseInput}>ЗАКРЫТЬ</div>
             </div>
           </div>
         </form>

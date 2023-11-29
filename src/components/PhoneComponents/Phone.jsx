@@ -6,29 +6,34 @@ import ServicesSectionPhone from "./servicesSectionPhone/ServicesSectionPhone";
 import GallerySectionPhone from "./gallerySectionPhone/GallerySectionPhone";
 import HeaderSectionPhone from "./headerSectionPhone/HeaderSectionPhone";
 import ConsultationSectionPhone from "./consultationSectionPhone/ConsultationSectionPhone";
+import Footer from "../Footer/Footer";
 
-function Phone({onClickAdd}) {
+function Phone({ onClickAdd }) {
   const [modalNavOn, setModalNavOn] = useState(false);
 
   const addModalNav = () => {
-    setTimeout(()=>setModalNavOn(!modalNavOn), 200);
+    setTimeout(() => setModalNavOn(!modalNavOn), 200);
   };
 
   return (
-    <div className={styles.phone} >
+    <div className={styles.phone}>
       <div className={styles.phoneContainer}>
         <div className={styles.phoneContent}>
-          <div className={styles.phoneSections} onClick={()=>setModalNavOn(false)}>
+          <div
+            className={styles.phoneSections}
+            onClick={() => setModalNavOn(false)}
+          >
             <HeaderSectionPhone
               modalNavOn={modalNavOn}
               addModalNav={addModalNav}
               onClickAdd={onClickAdd}
             />
-            <MainSectionPhone onClickAdd={onClickAdd}/>
+            <MainSectionPhone onClickAdd={onClickAdd} />
             <AboutSectionPhone />
             <ServicesSectionPhone />
-            <ConsultationSectionPhone onClickAdd={onClickAdd}/>
+            <ConsultationSectionPhone onClickAdd={onClickAdd} />
             <GallerySectionPhone />
+            <Footer footerPhone={true}/>
           </div>
         </div>
       </div>
