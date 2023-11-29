@@ -26,6 +26,10 @@ img {
   user-select: none;
 }
 
+a, p {
+  text-decoration: none;
+}
+
 body {
   color: #333;
   background-color: #fff;
