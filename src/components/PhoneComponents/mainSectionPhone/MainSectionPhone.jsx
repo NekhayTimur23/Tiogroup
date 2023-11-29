@@ -1,7 +1,7 @@
 import ButtonComp from "@/components/ButtonSection/ButtonComp";
 import styles from "./MainSectionPhone.module.sass";
 
-function MainSectionPhone() {
+function MainSectionPhone({onClickAdd}) {
   return (
     <div className={styles.mainPhone}>
       <div className={styles.mainPhoneContainer}>
@@ -14,7 +14,7 @@ function MainSectionPhone() {
               <p className={styles.textFour}>С ГАРАНТИЕЙ В МОСКВЕ</p>
             </div>
             <div className={styles.mainPhoneBottom}>
-              < ButtonComp mainPhone={true}/>
+              < ButtonComp onClickAdd={onClickAdd} mainPhone={true}/>
             </div>
           </div>
           <div className={styles.mainPhoneTextBlock}>

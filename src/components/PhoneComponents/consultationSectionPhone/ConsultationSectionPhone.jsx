@@ -2,7 +2,7 @@ import ConcultationSection from '@/components/ConcultationSection/Concultation';
 import style from './ConsultationSectionPhone.module.sass'
 
 
-function ConsultationSectionPhone() {
+function ConsultationSectionPhone({onClickAdd}) {
     return (
         <div className={style.consultPhone}>
             <div className={style.consultPhoneContainer}>
@@ -11,7 +11,7 @@ function ConsultationSectionPhone() {
                     </div>
                 </div>
             </div>
-            < ConcultationSection sectionPhone={true}/>
+            < ConcultationSection onClickAdd={onClickAdd} sectionPhone={true}/>
         </div>
     )
 }
