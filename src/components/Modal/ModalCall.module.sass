@@ -19,18 +19,15 @@
         padding: 20px
         border-radius: 5px
         max-width: 40vw 
+        background: rgb(224, 224, 224) 
         h1
             font-size: 3.5vmin
-            margin-bottom: 1vmin
+            margin-bottom: 2vmin
         p
             font-size: 2vmin
             margin-bottom: 1vmin
         .modalContainer
             margin-bottom: 1vmin
-            display: flex
-            flex-direction: column
-            justify-content: center
-            align-items: center
             .inputBlock
                 display: inline
                 .modalContainerInput
@@ -40,8 +37,9 @@
                     border-radius: 0
                     margin: 0.4vmin
                     padding:  0  10px
+                    background: rgb(224, 224, 224) 
                     &:focus
-                        background: rgba(225, 225, 225, 0.413)
+                        background: rgba(255, 255, 255, 0.413)
                         outline: none
         @media (max-width: 1050px)
             max-width: 70vw 
@@ -50,34 +48,65 @@
             p
                 font-size: calc(12px + (20 - 12)*(100vw - 320px) / (1050 - 320))
             .modalContainer
+                margin: 15px 0
                 .inputBlock
                     .modalContainerInput
-                        width: 300px
-                        // width: calc(200px + (300 - 200)*(100vw - 320px) / (1050 - 320))
-                        height: 40px
-                        // height: calc(16px + (60 - 16)*(100vw - 320px) / (1050 - 320))
+                        width: calc(180px + (300 - 180)*(100vw - 320px) / (1050 - 320))
+                        height: calc(30px + (40 - 30)*(100vw - 320px) / (1050 - 320))
+                        
         .buttonBlock
             display: flex
             width: 100%
             justify-content: space-around
-            .button
-                display: flex
-                align-items: center
-                justify-content: center
-                padding: 0.5vw
-                border-radius: 0.51vmin
-                transition: color 0.2s ease, background-color 0.2s ease
-                p
-                    margin: 0
             .buttonInput
-                background-color: rgba(255, 94, 30, 0.471)
-                &:hover
-                    color: #fff
-                    background-color: rgb(255, 94, 30)
-                &:active
-                    background-color: rgba(255, 94, 30, 0.471)
+                position: relative
+                width: calc(120px + (160 - 120) * (100vw - 320px) / (1024 - 320))
+                height: calc(35px + (50 - 35) * (100vw - 320px) / (1024 - 320))
+                .buttonCall
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    border: none
+                    text-align: left
+                    border-radius: 10px
+                    user-select: none
+                    padding: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320)) 
+                    background-color: rgb(255, 95, 30)
+                    font-size: calc(14px + (18 - 14) * (100vw - 320px) / (1024 - 320))
+                    color: rgb(255, 255, 255)
+                    box-shadow: -10px -10px 12px rgba(255, 255, 255, 0.5), 10px 10px 12px rgba(0, 0, 0, 0.16)
+                    transition: 0.1s ease
+                    &:active
+                        font-size: calc(13px + (17 - 13) * (100vw - 320px) / (1024 - 320))
+                        box-shadow:  -10px -10px 15px rgba(255, 255, 255, 0.344), 10px 10px 15px rgba(0, 0, 0, 0.044) , inset -10px -10px 15px rgba(255, 126, 75, 0.727), inset 10px 10px 15px rgba(0, 0, 0, 0.16)
+                        background-color: rgb(255, 95, 30)
             .closeButton
-                background-color: rgba(126, 126, 126, 0.284)
-                &:hover
-                    color: #fff
-                    background-color: rgb(126, 126, 126)
+                position: relative
+                width: calc(70px + (90 - 60) * (100vw - 320px) / (1024 - 320))
+                height: calc(35px + (50 - 35) * (100vw - 320px) / (1024 - 320))
+                .buttonCloseInput
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    position: absolute
+                    top: 0
+                    left: 0
+                    right: 0
+                    bottom: 0
+                    border-radius: 10px
+                    user-select: none
+                    padding: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320)) 
+                    background-color: rgb(235, 235, 235)
+                    font-size: calc(14px + (18 - 14) * (100vw - 320px) / (1024 - 320))
+                    color: rgb(62, 62, 62)
+                    box-shadow: -10px -10px 12px rgba(255, 255, 255, 0.5), 10px 10px 12px rgba(0, 0, 0, 0.16)
+                    transition: 0.1s ease
+                    &:active
+                        font-size: calc(13px + (17 - 13) * (100vw - 320px) / (1024 - 320))
+                        box-shadow:  -10px -10px 12px rgba(255, 255, 255, 0.5), 10px 10px 12px rgba(0, 0, 0, 0.16) , inset -10px -10px 15px rgba(255, 255, 255, 0.727), inset 10px 10px 15px rgba(0, 0, 0, 0.16)
+                        background-color: rgb(220, 220, 220)
