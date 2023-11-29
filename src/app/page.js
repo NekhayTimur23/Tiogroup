@@ -14,6 +14,8 @@ import Footer from "@/components/Footer/Footer";
 import Gallery from "@/components/Gallery/Garrery";
 import Phone from "@/components/PhoneComponents/Phone";
 
+// git config --global core.autocrlf true
+
 export default function Home() {
   const [isModalCallOpen, setIsModalCallOpen] = useState(false);
   const [isModalPolicyOpen, setIsModalPolicyOpen] = useState(false);
