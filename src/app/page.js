@@ -95,17 +95,17 @@ export default function Home() {
               onNavigate={scrollToSection}
               onClickAdd={toggleModalCall}
             />
-            {isModalCallOpen && (
-              <ModalCall onClose={toggleModalCall}>
-                {/* Содержимое модального окна */}
-              </ModalCall>
-            )}
-            {isModalPolicyOpen && (
-              <ModalPrivacyPolicy onClose={toggleModalPolicy}/>
-            )}
           </>
         ) : (
-          <Phone />
+          <Phone onClickAdd={toggleModalCall} />
+        )}
+        {isModalCallOpen && (
+          <ModalCall onClose={toggleModalCall}>
+            {/* Содержимое модального окна */}
+          </ModalCall>
+        )}
+        {isModalPolicyOpen && (
+          <ModalPrivacyPolicy onClose={toggleModalPolicy} />
         )}
       </div>
     </>

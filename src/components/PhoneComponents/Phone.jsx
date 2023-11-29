@@ -7,7 +7,7 @@ import GallerySectionPhone from "./gallerySectionPhone/GallerySectionPhone";
 import HeaderSectionPhone from "./headerSectionPhone/HeaderSectionPhone";
 import ConsultationSectionPhone from "./consultationSectionPhone/ConsultationSectionPhone";
 
-function Phone() {
+function Phone({onClickAdd}) {
   const [modalNavOn, setModalNavOn] = useState(false);
 
   const addModalNav = () => {
@@ -15,18 +15,19 @@ function Phone() {
   };
 
   return (
-    <div className={styles.phone}>
+    <div className={styles.phone} >
       <div className={styles.phoneContainer}>
         <div className={styles.phoneContent}>
           <div className={styles.phoneSections} onClick={()=>setModalNavOn(false)}>
             <HeaderSectionPhone
               modalNavOn={modalNavOn}
               addModalNav={addModalNav}
+              onClickAdd={onClickAdd}
             />
-            <MainSectionPhone />
+            <MainSectionPhone onClickAdd={onClickAdd}/>
             <AboutSectionPhone />
             <ServicesSectionPhone />
-            <ConsultationSectionPhone />
+            <ConsultationSectionPhone onClickAdd={onClickAdd}/>
             <GallerySectionPhone />
           </div>
         </div>

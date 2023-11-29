@@ -10,11 +10,20 @@ html {
 *::after {
   margin: 0;
   padding: 0;
-  font-family: 'Oswald', sans-serif
+  font-family: "Oswald", sans-serif;
 }
 
 :root {
   --index: calc(1vw + 1vh);
+}
+
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -22,7 +31,7 @@ body {
   background-color: #fff;
   font-size: 16px;
   cursor: default;
-  
+
   /* display: inline-block; */
   /* user-select: none; */
 }

@@ -1,6 +1,6 @@
 import styles from "./ModalNav.module.sass";
 
-function ModalNav({ addModalNav, modalNavOn }) {
+function ModalNav({ addModalNav, modalNavOn,onClickAdd }) {
 
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
@@ -30,7 +30,7 @@ function ModalNav({ addModalNav, modalNavOn }) {
           <span>ГАЛЕРЕЯ</span>
         </div>
       </div>
-      <div className={styles.bottomCallBox}>
+      <div onClick={onClickAdd} className={styles.bottomCallBox}>
         <div className={styles.buttonCall}>
           <span>Заказать звонок</span>
         </div>

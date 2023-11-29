@@ -1,3 +1,4 @@
+
 .modalCall
     position: fixed
     top: 0
@@ -26,8 +27,12 @@
             margin-bottom: 1vmin
         .modalContainer
             margin-bottom: 1vmin
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
             .inputBlock
-                display: inline-flexbox
+                display: inline
                 .modalContainerInput
                     width: 30vmin
                     height: 3.5vmin
@@ -38,6 +43,19 @@
                     &:focus
                         background: rgba(225, 225, 225, 0.413)
                         outline: none
+        @media (max-width: 1050px)
+            max-width: 70vw 
+            h1
+                font-size: calc(16px + (24 - 16)*(100vw - 320px) / (1050 - 320))
+            p
+                font-size: calc(12px + (20 - 12)*(100vw - 320px) / (1050 - 320))
+            .modalContainer
+                .inputBlock
+                    .modalContainerInput
+                        width: 300px
+                        // width: calc(200px + (300 - 200)*(100vw - 320px) / (1050 - 320))
+                        height: 40px
+                        // height: calc(16px + (60 - 16)*(100vw - 320px) / (1050 - 320))
         .buttonBlock
             display: flex
             width: 100%
