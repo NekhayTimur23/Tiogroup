@@ -32,7 +32,7 @@ function ModalNav({ addModalNav, modalNavOn,onClickAdd }) {
       </div>
       <div onClick={onClickAdd} className={styles.bottomCallBox}>
         <div className={styles.buttonCall}>
-          <span>Заказать звонок</span>
+          <span>ЗАКАЗАТЬ ЗВОНОК</span>
         </div>
       </div>
       <div className={styles.socialNetworkBlock}>
