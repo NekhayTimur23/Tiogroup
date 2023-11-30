@@ -1,11 +1,12 @@
+import { forwardRef } from "react";
 import ButtonComp from "@/components/ButtonSection/ButtonComp";
 import styles from "./MainSectionPhone.module.sass";
 
-function MainSectionPhone({onClickAdd}) {
+const MainSectionPhone = forwardRef(({ onClickAdd }, ref) => {
   return (
     <div className={styles.mainPhone}>
       <div className={styles.mainPhoneContainer}>
-        <div className={styles.mainPhoneContent}>
+        <div ref={ref} className={styles.mainPhoneContent}>
           <div className={styles.mainPhoneTopBlock}>
             <div className={styles.mainPhoneTopBlockText}>
               <p className={styles.textOne}>ПОЛНЫЙ КОМПЛЕКС</p>
@@ -14,7 +15,7 @@ function MainSectionPhone({onClickAdd}) {
               <p className={styles.textFour}>С ГАРАНТИЕЙ В МОСКВЕ</p>
             </div>
             <div className={styles.mainPhoneBottom}>
-              < ButtonComp onClickAdd={onClickAdd} mainPhone={true}/>
+              <ButtonComp onClickAdd={onClickAdd} mainPhone={true} />
             </div>
           </div>
           <div className={styles.mainPhoneTextBlock}>
@@ -40,6 +41,8 @@ function MainSectionPhone({onClickAdd}) {
       </div>
     </div>
   );
-}
+});
 
+
+MainSectionPhone.displayName = 'MainSectionPhone';
 export default MainSectionPhone;

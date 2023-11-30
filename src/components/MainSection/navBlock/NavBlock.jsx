@@ -55,17 +55,17 @@ export default function NavBlock({ onNavigate }) {
         </div>
         <div
           onClick={() => {
-            onNavigate("section5");
-          }}
-        >
-          <span>ГАЛЕРЕЯ</span>
-        </div>
-        <div
-          onClick={() => {
             onNavigate("section4");
           }}
         >
           <span>КОНТАКТЫ</span>
+        </div>
+        <div
+          onClick={() => {
+            onNavigate("section5");
+          }}
+        >
+          <span>ГАЛЕРЕЯ</span>
         </div>
       </div>
     </div>

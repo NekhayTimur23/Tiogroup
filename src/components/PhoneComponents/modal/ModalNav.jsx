@@ -1,6 +1,6 @@
 import styles from "./ModalNav.module.sass";
 
-function ModalNav({ addModalNav, modalNavOn,onClickAdd }) {
+function ModalNav({ addModalNav, modalNavOn, onClickAdd, onNavigate}) {
 
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
@@ -14,19 +14,36 @@ function ModalNav({ addModalNav, modalNavOn,onClickAdd }) {
       }
     >
       <div className={styles.modelNavContent}>
-        <div>
+        <div onClick={() => {
+            onNavigate("section1");
+            addModalNav()
+          }}
+          >
           <span>ГЛАВНАЯ</span>
         </div>
-        <div>
+        <div onClick={() => {
+            onNavigate("section2");
+            addModalNav()
+          }}>
           <span>О НАС</span>
         </div>
-        <div>
+        <div onClick={() => {
+            onNavigate("section3");
+            addModalNav()
+          }}>
           <span>УСЛУГИ</span>
         </div>
-        <div>
+        <div onClick={() => {
+            onNavigate("section4");
+            addModalNav()
+          }}>
           <span>КОНТАКТЫ</span>
         </div>
-        <div>
+        <div onClick={() => {
+            onNavigate("section5");
+            addModalNav()
+          }} 
+          >
           <span>ГАЛЕРЕЯ</span>
         </div>
       </div>
@@ -37,7 +54,7 @@ function ModalNav({ addModalNav, modalNavOn,onClickAdd }) {
       </div>
       <div className={styles.socialNetworkBlock}>
         <div className={styles.bottomSocBox}>
-          <a>
+          <a  href={whatsAppChannelUrl}>
             <div className={styles.bottomImg}>
               <img
                 className={styles.img}

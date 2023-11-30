@@ -1,17 +1,45 @@
 import Carousel from "./Carousel/Carousel";
-import { forwardRef } from "react";
+import { forwardRef, useState, useEffect } from "react";
 import "./Garrery.sass";
 
 const Gallery = forwardRef((props, ref) => {
-    return(
-        <Carousel ref={ref}>
-            <div className="item item-1">item-1</div>
-            <div className="item item-2">item-2</div>
-            <div className="item item-3">item-3</div>
-        </Carousel>
-    )
+  let newMapCards = [
+    {
+      name: "Сенеж",
+      id: 1,
+      url: "/gallery/GVVGVhbhbhvfCg.png",
+    },
+    {
+      name: "Сенеж",
+      id: 2,
+      url: "/gallery/JBGVhuhugtF.png",
+    },
+    {
+      name: "Сенеж",
+      id: 3,
+      url: "/gallery/RFHijijnHVC.jpg",
+    },
+    {
+      name: "Сенеж",
+      id: 4,
+      url: "/gallery/whwJGJLo.png",
+    },
+  ];
+
+  return (
+    <Carousel ref={ref} >
+      {newMapCards.map((card) => (
+        <div
+          key={card.id}
+          className={`item imet-${card.id}`}
+          url={card.url}
+        >
+          {card.name}
+        </div>
+      ))}
+    </Carousel>
+  );
 });
 
-
-Gallery.displayName = 'Gallery';
+Gallery.displayName = "Gallery";
 export default Gallery;

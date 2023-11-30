@@ -19,14 +19,6 @@ import Phone from "@/components/PhoneComponents/Phone";
 export default function Home() {
   const [isModalCallOpen, setIsModalCallOpen] = useState(false);
   const [isModalPolicyOpen, setIsModalPolicyOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(undefined);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const toggleModalCall = () => {
     setIsModalCallOpen(!isModalCallOpen);
@@ -75,34 +67,32 @@ export default function Home() {
         />
       </Head>
       <div className={styles.main}>
-        {windowWidth >= 1050 ? (
-          <>
-            <Main
-              ref={sectionRefs.section1}
-              onNavigate={scrollToSection}
-              onClickAdd={toggleModalCall}
-            />
-            <About ref={sectionRefs.section2} onClickAdd={toggleModalCall} />
-            <Services ref={sectionRefs.section3} />
-            <Gallery ref={sectionRefs.section5} />
-            <Concultation
-              ref={sectionRefs.section4}
-              onClickAdd={toggleModalCall}
-            />
-            <Reviews />
-            <Footer
-              onClickModalPolicy={toggleModalPolicy}
-              onNavigate={scrollToSection}
-              onClickAdd={toggleModalCall}
-            />
-          </>
-        ) : (
-          <Phone onClickAdd={toggleModalCall} />
-        )}
+        <div className={styles.versionDisktop}>
+          <Main
+            ref={sectionRefs.section1}
+            onNavigate={scrollToSection}
+            onClickAdd={toggleModalCall}
+          />
+          <About ref={sectionRefs.section2} onClickAdd={toggleModalCall} />
+          <Services ref={sectionRefs.section3} />
+
+          <Concultation
+            ref={sectionRefs.section4}
+            onClickAdd={toggleModalCall}
+          />
+          <Gallery ref={sectionRefs.section5} />
+          <Reviews />
+          <Footer
+            onClickModalPolicy={toggleModalPolicy}
+            onNavigate={scrollToSection}
+            onClickAdd={toggleModalCall}
+          />
+        </div>
+        <div className={styles.versionPhone}>
+          <Phone sectionRefs={sectionRefs} onClickModalPolicy={toggleModalPolicy} onNavigate={scrollToSection} onClickAdd={toggleModalCall} />
+        </div>
         {isModalCallOpen && (
-          <ModalCall onClose={toggleModalCall}>
-            {/* Содержимое модального окна */}
-          </ModalCall>
+          <ModalCall onClose={toggleModalCall}/>
         )}
         {isModalPolicyOpen && (
           <ModalPrivacyPolicy onClose={toggleModalPolicy} />

@@ -3,9 +3,27 @@
     min-height: 100vh
     .phoneContainer
         max-width: 100%
+        position: relative
         .phoneSections
             // padding: calc(15px + (20 - 15)*(100vw - 320px) / (1024 - 320))
             background-color: rgb(238, 238, 238)
+            .headerPhoneButtonModal
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                position: fixed
+                top: 0
+                right: 10px
+                width: calc(40px + (55 - 40)*(100vw - 320px) / (1024 - 320))
+                height: calc(40px + (55 - 40)*(100vw - 320px) / (1024 - 320))
+                border-radius: 0 0 5px 5px
+                background: rgb(255, 95, 30)
+                .headerButton
+                    width: calc(25px + (30 - 25)*(100vw - 320px) / (1024 - 320))
+                    height: 2px
+                    background: rgb(253, 253, 253)
+                    margin: 3px 0
         
 
 
