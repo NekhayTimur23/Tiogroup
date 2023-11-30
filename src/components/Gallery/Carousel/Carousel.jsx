@@ -9,6 +9,7 @@ import {
   useRef,
 } from "react";
 import "./Carousel.sass";
+import { TiChevronLeft, TiChevronRight } from "react-icons/ti";
 
 const Carousel = forwardRef(({ children, sectionPhone }, ref) => {
   const [peges, setPages] = useState([]);
@@ -19,7 +20,7 @@ const Carousel = forwardRef(({ children, sectionPhone }, ref) => {
   const rar = useRef();
 
   //  ДЛЯ ПК ПОВОРАЧИВАЕТ НА ЛЕГО
-  const addArrowsLeft = () => {
+  function addArrowsLeft() {
     setSlid((currentSlid) => {
       const newSlid = currentSlid + 100;
       return Math.min(newSlid, 0);
@@ -28,10 +29,10 @@ const Carousel = forwardRef(({ children, sectionPhone }, ref) => {
       const slidCounter = currentSlid - 1;
       return Math.max(slidCounter, 1);
     });
-  };
+  }
 
   //  ДЛЯ КП ПОВОРАЧИВАЕТ НА ПРАВО
-  const addArrowsRight = () => {
+  function addArrowsRight() {
     setSlid((currentSlid) => {
       const newSlid = currentSlid - 100;
       return Math.max(newSlid, -(peges.length - 1) * 100);
@@ -40,13 +41,10 @@ const Carousel = forwardRef(({ children, sectionPhone }, ref) => {
       const slidCounter = currentSlid + 1;
       return Math.min(slidCounter, peges.length);
     });
-  };
-
+  }
 
   // ДЛЯ ТЕЛЕФОНА ГОВОРИТ КУДА БЫЛО СДЕЛАН ПОВОРОТ
   const initializeSwipeDetection = (element) => {
-    if (!sectionPhone) return;
-
     let startX;
 
     const handleTouchStart = (e) => {
@@ -78,94 +76,53 @@ const Carousel = forwardRef(({ children, sectionPhone }, ref) => {
 
   useEffect(() => {
     const element = rar.current;
-    
     setPages(
       Children.map(children, (child) => {
         return cloneElement(child, {
           style: {
-            height: "100%",
-            minWidth: "100%",
-            maxWidth: "100%",
+            // backgroundImage: `url("${child.props.url}")`,
           },
         });
       })
-      
     );
 
     if (element) {
       const cleanup = initializeSwipeDetection(element);
       return cleanup;
     }
-    
   }, [sectionPhone, slide]);
 
   return (
-    <div
-      ref={ref}
-      className={
-        sectionPhone
-          ? "carousel-section carousel-sectionPhone"
-          : "carousel-section"
-      }
-    >
+    <div ref={ref} className="carousel-section">
       <div className="carousel-contianer">
+        <div className="arrows arrowLeft">
+          <TiChevronLeft onClick={addArrowsLeft} />
+        </div>
         <div className="carousel-window">
           <div
             ref={rar}
             className="all-pages-container"
             style={{ transform: `translateX(${slid}%)` }}
-            onTouchMove={() => {setSlide(rar.current)}}
+            onTouchMove={() => {
+              setSlide(rar.current);
+            }}
           >
             {peges}
           </div>
-        </div>
-        {!sectionPhone && (
-          <div className="arrows">
-            <svg
-              className="buttom-arrow left"
-              onClick={addArrowsLeft}
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              class="buttom-arrow Left"
-              height="10px"
-              width="auto"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7.28 7.72a.75.75 0 010 1.06l-2.47 2.47H21a.75.75 0 010 1.5H4.81l2.47 2.47a.75.75 0 11-1.06 1.06l-3.75-3.75a.75.75 0 010-1.06l3.75-3.75a.75.75 0 011.06 0z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-            <div className="arrows-text">
-              <span>{slidCounter}</span>
-              <span>/</span>
-              <span>{peges.length}</span>
-            </div>
-            <svg
-              className="buttom-arrow right"
-              onClick={addArrowsRight}
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              class="buttom-arrow Right"
-              height="10px"
-              width="auto"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.72 7.72a.75.75 0 011.06 0l3.75 3.75a.75.75 0 010 1.06l-3.75 3.75a.75.75 0 11-1.06-1.06l2.47-2.47H3a.75.75 0 010-1.5h16.19l-2.47-2.47a.75.75 0 010-1.06z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
+          <div className="slides">
+            {peges.map((e, i) => (
+              <div
+                key={Math.random(1)}
+                className={`${
+                  slidCounter === i + 1 ? "number-slid active" : "number-slid"
+                }`}
+              ></div>
+            ))}
           </div>
-        )}
+        </div>
+        <div className="arrows arrowRight">
+          <TiChevronRight onClick={addArrowsRight} />
+        </div>
       </div>
     </div>
   );

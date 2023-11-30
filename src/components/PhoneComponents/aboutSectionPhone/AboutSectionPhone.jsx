@@ -1,10 +1,12 @@
 import styles from "./AboutSectionPhone.module.sass";
+import { forwardRef } from "react";
 
-function AboutSectionPhone() {
+
+const AboutSectionPhone = forwardRef((props, ref) => {
   return (
     <div className={styles.aboutSection}>
       <div className={styles.aboutSectionContainer}>
-        <div className={styles.aboutSectionContent}>
+        <div ref={ref} className={styles.aboutSectionContent}>
           <div className={styles.aboutSectionContentTextOne}>
             <p>Наши преимущества</p>
           </div>
@@ -28,6 +30,8 @@ function AboutSectionPhone() {
       </div>
     </div>
   );
-}
+})
+
+AboutSectionPhone.displayName = 'AboutSectionPhone';
 
 export default AboutSectionPhone;

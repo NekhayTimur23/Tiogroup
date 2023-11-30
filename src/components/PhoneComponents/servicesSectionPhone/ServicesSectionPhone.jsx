@@ -1,10 +1,12 @@
 import styles from "./ServicesSectionPhone.module.sass";
+import { forwardRef } from "react";
 
-function ServicesSectionPhone() {
+
+const ServicesSectionPhone = forwardRef((props, ref) =>{
   return (
     <div className={styles.servicesSection}>
       <div className={styles.servicesContainer}>
-        <div className={styles.servicesContent}>
+        <div ref={ref} className={styles.servicesContent}>
           <h1>Мы предлогаем</h1>
           <div className={styles.servicesCards}>
 
@@ -86,6 +88,6 @@ function ServicesSectionPhone() {
       </div>
     </div>
   );
-}
+})
 
 export default ServicesSectionPhone;

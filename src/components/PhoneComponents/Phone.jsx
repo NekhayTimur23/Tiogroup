@@ -3,12 +3,13 @@ import styles from "./Phone.module.sass";
 import MainSectionPhone from "./mainSectionPhone/MainSectionPhone";
 import AboutSectionPhone from "./aboutSectionPhone/AboutSectionPhone";
 import ServicesSectionPhone from "./servicesSectionPhone/ServicesSectionPhone";
-import GallerySectionPhone from "./gallerySectionPhone/GallerySectionPhone";
 import HeaderSectionPhone from "./headerSectionPhone/HeaderSectionPhone";
-import ConsultationSectionPhone from "./consultationSectionPhone/ConsultationSectionPhone";
+import ConcultationSection from "../ConcultationSection/Concultation";
+import ModalNav from "./modal/ModalNav";
 import Footer from "../Footer/Footer";
+import Gallery from "../Gallery/Garrery";
 
-function Phone({ onClickAdd }) {
+function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
   const [modalNavOn, setModalNavOn] = useState(false);
 
   const addModalNav = () => {
@@ -24,16 +25,43 @@ function Phone({ onClickAdd }) {
             onClick={() => setModalNavOn(false)}
           >
             <HeaderSectionPhone
+              onNavigate={onNavigate}
               modalNavOn={modalNavOn}
               addModalNav={addModalNav}
               onClickAdd={onClickAdd}
             />
-            <MainSectionPhone onClickAdd={onClickAdd} />
-            <AboutSectionPhone />
-            <ServicesSectionPhone />
-            <ConsultationSectionPhone onClickAdd={onClickAdd} />
-            <GallerySectionPhone />
-            <Footer footerPhone={true}/>
+            <MainSectionPhone
+              ref={sectionRefs.section1}
+              onClickAdd={onClickAdd}
+            />
+            <AboutSectionPhone ref={sectionRefs.section2} />
+            <ServicesSectionPhone ref={sectionRefs.section3} />
+            <ConcultationSection
+              ref={sectionRefs.section4}
+              onClickAdd={onClickAdd}
+              sectionPhone={true}
+            />
+            <Gallery ref={sectionRefs.section5} />
+            <Footer
+              onClickModalPolicy={onClickModalPolicy}
+              onClickAdd={onClickAdd}
+              footerPhone={true}
+            />
+
+            <div
+              onClick={addModalNav}
+              className={styles.headerPhoneButtonModal}
+            >
+              <div className={styles.headerButton}></div>
+              <div className={styles.headerButton}></div>
+              <div className={styles.headerButton}></div>
+            </div>
+            <ModalNav
+                onNavigate={onNavigate}
+                onClickAdd={onClickAdd}
+                modalNavOn={modalNavOn}
+                addModalNav={addModalNav}
+              />
           </div>
         </div>
       </div>
