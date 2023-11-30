@@ -90,4 +90,5 @@ const ServicesSectionPhone = forwardRef((props, ref) =>{
   );
 })
 
+ServicesSectionPhone.displayName = "ServicesSectionPhone";
 export default ServicesSectionPhone;
