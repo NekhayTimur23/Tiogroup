@@ -13,7 +13,7 @@ export default function HeaderSectionPhone({onNavigate, modalNavOn, addModalNav,
       <div className={styles.headerPhoneContainer} >
         <div className={styles.headerPhoneContent}>
           <div className={styles.headerPhoneLogo}>
-            <img src="/headerimg/logoSecond.svg" alt="#" />
+            <img src="/headerimg/logoSecond2.svg" alt="#" />
             <p>СТРОИТЕЛЬНАЯ КОМПАНИЯ</p>
           </div>
           <div className={styles.headerPhoneEmail}>
@@ -26,7 +26,7 @@ export default function HeaderSectionPhone({onNavigate, modalNavOn, addModalNav,
             </div>
           </div>
           <div className={styles.headerPhoneCall}>
-            <img src="/headerimg/phoneSecond.svg" alt="#" />
+            <img src="/headerimg/phoneSecond2.svg" alt="#" />
             <div className={styles.headerPhoneCallText}>
               <p>+7(000) 000-00-00</p>
               <p>+7(000) 000-00-00</p>
