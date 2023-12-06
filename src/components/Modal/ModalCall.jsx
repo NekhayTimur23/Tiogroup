@@ -11,10 +11,6 @@ const ModalCall = ({ onClose }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = { name, email, phone };
-    console.log(
-      `${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`,
-      "clg для проверки имени хоста"
-    );
 
     try {
       const response = await fetch(
@@ -46,6 +42,10 @@ const ModalCall = ({ onClose }) => {
   const handlePhoneInput = (e) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
     let formattedValue = "";
+    console.log(
+      `${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`,
+      "clg для проверки имени хоста"
+    );
 
     if (inputValue) {
       if (inputValue.startsWith("7") || inputValue.startsWith("8")) {
