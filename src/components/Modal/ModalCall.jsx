@@ -11,11 +11,11 @@ const ModalCall = ({ onClose }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = { name, email, phone };
-    
+   
 
     try {
       const response = await fetch(
-        'http://localhost:3001/send-email',
+        `${window.location.href}/send-email`,
         {
           method: "POST",
           headers: {
@@ -43,8 +43,9 @@ const ModalCall = ({ onClose }) => {
   const handlePhoneInput = (e) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
     let formattedValue = "";
+
     console.log(
-      'http://localhost:3001/send-email',
+      `${window.location.href}/send-email`,
       "clg для проверки имени хоста"
     );
 
@@ -109,17 +110,14 @@ const ModalCall = ({ onClose }) => {
             </div>
           </div>
           <div className={styles.buttonBlock}>
-            <button
-              type="submit"
-              className={styles.button + " " + styles.buttonInput}
-            >
-              <p>Заказать звонок</p>
-            </button>
-            <div
-              className={styles.button + " " + styles.closeButton}
-              onClick={onClose}
-            >
-              <p>Закрыть</p>
+            <div className={styles.buttonInput}>
+              <button type="submit" className={styles.buttonCall}>
+                ЗАКАЗАТЬ ЗВОНОК
+              </button>
+            </div>
+
+            <div className={styles.closeButton} onClick={onClose}>
+              <div className={styles.buttonCloseInput}>ЗАКРЫТЬ</div>
             </div>
           </div>
         </form>
