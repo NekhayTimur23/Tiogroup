@@ -15,7 +15,7 @@ const ModalCall = ({ onClose }) => {
 
     try {
       const response = await fetch(
-        `${window.location.href}send-email`,
+        `http://${window.location.host}/send-email`,
         {
           method: "POST",
           headers: {
@@ -45,9 +45,8 @@ const ModalCall = ({ onClose }) => {
     let formattedValue = "";
 
     console.log(
-      `${window.location.href}send-email`,
-      "clg для проверки имени хоста"
-    );``
+      `http://${window.location.host}/send-email`, 'простотр URL send-email'
+    );
 
     if (inputValue) {
       if (inputValue.startsWith("7") || inputValue.startsWith("8")) {
