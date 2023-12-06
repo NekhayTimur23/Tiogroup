@@ -11,11 +11,11 @@ const ModalCall = ({ onClose }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = { name, email, phone };
-   
+    
 
     try {
       const response = await fetch(
-        `${window.location.href}send-email`,
+        `${window.location.protocol}//${window.location.hostname}:3001/send-email`,
         {
           method: "POST",
           headers: {
@@ -43,9 +43,8 @@ const ModalCall = ({ onClose }) => {
   const handlePhoneInput = (e) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
     let formattedValue = "";
-
-     console.log(
-      `${window.location.href}send-email`,
+    console.log(
+      `${window.location.protocol}//${window.location.hostname}:${window.location.port}/send-email`,
       "clg для проверки имени хоста"
     );
 
@@ -71,8 +70,7 @@ const ModalCall = ({ onClose }) => {
   return (
     <div className={styles.modalCall} onClick={onClose}>
       <div className={styles.modalOverlay} onClick={(e) => e.stopPropagation()}>
-        {/* <form name="form" onSubmit={handleSubmit}> */}
-        <form name="form"  method="POST" data-netlify="true">
+        <form name="form" onSubmit={handleSubmit}>
           <div className={styles.modalContainer}>
             <h1>Обратная связь</h1>
             <p>
@@ -86,8 +84,8 @@ const ModalCall = ({ onClose }) => {
                 className={styles.modalContainerInput}
                 type="name"
                 placeholder="Имя"
-                // value={name}
-                // onChange={(e) => setName(e.target.value)}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
               <input
@@ -95,16 +93,16 @@ const ModalCall = ({ onClose }) => {
                 className={styles.modalContainerInput}
                 type="email"
                 placeholder="E-mail"
-                // value={email}
-                // onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <input
                 name="tel"
                 className={styles.modalContainerInput}
                 type="tel"
-                // value={phone}
-                // onChange={handlePhoneInput}
+                value={phone}
+                onChange={handlePhoneInput}
                 placeholder="+7"
                 required
               />
