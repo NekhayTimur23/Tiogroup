@@ -15,7 +15,7 @@ const ModalCall = ({ onClose }) => {
 
     try {
       const response = await fetch(
-        `${window.location.href}/send-email`,
+        `${window.location.href}send-email`,
         {
           method: "POST",
           headers: {
