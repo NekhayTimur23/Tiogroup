@@ -45,9 +45,9 @@ const ModalCall = ({ onClose }) => {
     let formattedValue = "";
 
     console.log(
-      `${window.location.href}/send-email`,
+      `${window.location.href}send-email`,
       "clg для проверки имени хоста"
-    );
+    );``
 
     if (inputValue) {
       if (inputValue.startsWith("7") || inputValue.startsWith("8")) {
