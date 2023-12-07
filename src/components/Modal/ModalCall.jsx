@@ -17,7 +17,7 @@ const ModalCall = ({ onClose }) => {
       const response = await fetch(
         `${window.location.protocol}//${window.location.hostname}/api/send-email`,
         {
-          method: "POST",
+          method: "GET",
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
