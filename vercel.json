@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/api/send-email",
+        "methods": ["POST"],
+        "dest": "/api/send-email"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/$1"
+      }
+    ],
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/next"
+      }
+    ]
+  }
