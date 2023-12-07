@@ -17,7 +17,7 @@ const ModalCall = ({ onClose }) => {
       const response = await fetch(
         `${window.location.protocol}//${window.location.hostname}/api/send-email`,
         {
-          method: "GET",
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
@@ -76,6 +76,7 @@ const ModalCall = ({ onClose }) => {
             <p>
               Если у вас есть вопросы или предложения, вы можете оставить их
               здесь, и мы обязательно свяжемся с вами в ближайшее время.
+              Время 20:12
             </p>
 
             <div className={styles.inputBlock}>
