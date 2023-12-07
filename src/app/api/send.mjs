@@ -27,7 +27,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Обработка маршрута для отправки email
-app.post("/send-email", (req, res) => {
+app.post("/api/send-email", (req, res) => {
   // Данные, которые вы получаете из тела запроса
   console.log(req.body);
   const { name, email, phone } = req.body;
@@ -60,10 +60,6 @@ app.post("/send-email", (req, res) => {
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Сервер работает ${PORT}`);
-  setInterval(()=> 
-  {
-    console.log(`Сервер работает ${PORT}`)
-  }, 5000)
 });
 
 // const express = require("express");
