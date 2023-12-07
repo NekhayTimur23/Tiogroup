@@ -60,6 +60,10 @@ app.post("/send-email", (req, res) => {
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Сервер работает ${PORT}`);
+  setInterval(()=> 
+  {
+    console.log(`Сервер работает ${PORT}`)
+  }, 5000)
 });
 
 // const express = require("express");
