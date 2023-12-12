@@ -25,10 +25,6 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
             onClick={() => setModalNavOn(false)}
           >
             <HeaderSectionPhone
-              onNavigate={onNavigate}
-              modalNavOn={modalNavOn}
-              addModalNav={addModalNav}
-              onClickAdd={onClickAdd}
             />
             <MainSectionPhone
               ref={sectionRefs.section6}

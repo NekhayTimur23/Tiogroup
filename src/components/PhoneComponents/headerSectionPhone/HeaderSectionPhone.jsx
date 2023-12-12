@@ -3,7 +3,7 @@
 import styles from "./HeaderSectionPhone.module.sass";
 import { LuMail } from "react-icons/lu";
 
-export default function HeaderSectionPhone({onNavigate, modalNavOn, addModalNav,onClickAdd}) {
+export default function HeaderSectionPhone() {
 
   const telegramChannelUrl = "https://t.me/+79189255217";
   const whatsAppChannelUrl = "https://wa.me/+79189255217";
@@ -13,7 +13,7 @@ export default function HeaderSectionPhone({onNavigate, modalNavOn, addModalNav,
       <div className={styles.headerPhoneContainer} >
         <div className={styles.headerPhoneContent}>
           <div className={styles.headerPhoneLogo}>
-            <img src="/headerimg/logosecond.svg" alt="#" width={55}/>
+            <img src="/headerImg/logosecond.svg" alt="#" width={55}/>
             <p>СТРОИТЕЛЬНАЯ КОМПАНИЯ</p>
           </div>
           <div className={styles.headerPhoneEmail}>
@@ -26,14 +26,13 @@ export default function HeaderSectionPhone({onNavigate, modalNavOn, addModalNav,
             </div>
           </div>
           <div className={styles.headerPhoneCall}>
-            <img src="/headerimg/phonesecond.svg" alt="#" />
+            <img src="/headerImg/phonesecond.svg" alt="#" />
             <div className={styles.headerPhoneCallText}>
-              <p>+7(000) 000-00-04</p>
+              <p>+7(000) 000-00-05</p>
               <p>+7(000) 000-00-00</p>
             </div>
           </div>
         </div>
-        {/* <ModalNav onNavigate={onNavigate} onClickAdd={onClickAdd} modalNavOn={modalNavOn} addModalNav={addModalNav} /> */}
       </div>
     </div>
   );
