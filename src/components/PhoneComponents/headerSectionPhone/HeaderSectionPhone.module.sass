@@ -33,7 +33,13 @@
         .headerPhoneCall
             img
                 margin-right: calc(10px + (15 - 10)*(100vw - 320px) / (1024 - 320))
-            p
+            a
                 font-size: calc(12px + (14 - 12)*(100vw - 320px) / (1024 - 320))
-                font-weight: bold
+                font-weight: 500
+                margin-bottom: calc(5px + (10 - 5)*(100vw - 320px) / (1024 - 320))
+                &:last-child
+                    margin: 0
+            .headerPhoneCallText
+                display: flex
+                flex-direction: column
     
