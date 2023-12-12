@@ -28,7 +28,7 @@ export default function HeaderSectionPhone({onNavigate, modalNavOn, addModalNav,
           <div className={styles.headerPhoneCall}>
             <img src="/headerimg/phonesecond.svg" alt="#" />
             <div className={styles.headerPhoneCallText}>
-              <p>+7(000) 000-00-02</p>
+              <p>+7(000) 000-00-03</p>
               <p>+7(000) 000-00-00</p>
             </div>
           </div>
