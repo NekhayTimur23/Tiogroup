@@ -110,7 +110,7 @@ export default function Footer({
             <span>9.00-19.00 ПН-ПТ</span>
             <p>Наши телефоны:</p>
             <div className={styles.call}>
-              <span>8 (800) 888-88-88</span>
+              <span><a href="tel:+7900000000">+7 (000) 000-00-07</a></span>
               <span>8 (800) 888-88-88</span>
             </div>
           </div>
