@@ -1,5 +1,5 @@
 
-import ModalNav from "../modal/ModalNav";
+
 import styles from "./HeaderSectionPhone.module.sass";
 import { LuMail } from "react-icons/lu";
 
