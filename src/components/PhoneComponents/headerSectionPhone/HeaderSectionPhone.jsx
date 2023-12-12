@@ -28,8 +28,8 @@ export default function HeaderSectionPhone() {
           <div className={styles.headerPhoneCall}>
             <img src="/headerImg/phonesecond.svg" alt="#" />
             <div className={styles.headerPhoneCallText}>
-              <a>+7(000) 000-00-06</a>
-              <a>+7(000) 000-00-00</a>
+              <a href="tel:+7900000000">+7(000) 000-00-07</a>
+              {/* <a href="tel:+7900000000">+7(000) 000-00-00</a> */}
             </div>
           </div>
         </div>
