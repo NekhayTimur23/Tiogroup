@@ -42,6 +42,11 @@ export default function Home() {
     section3: useRef(null),
     section4: useRef(null),
     section5: useRef(null),
+    section6: useRef(null),
+    section7: useRef(null),
+    section8: useRef(null),
+    section9: useRef(null),
+    section10: useRef(null),
   };
 
   const scrollToSection = (sectionName) => {

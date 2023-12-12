@@ -31,18 +31,19 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
               onClickAdd={onClickAdd}
             />
             <MainSectionPhone
-              ref={sectionRefs.section1}
+              ref={sectionRefs.section6}
               onClickAdd={onClickAdd}
             />
-            <AboutSectionPhone ref={sectionRefs.section2} />
-            <ServicesSectionPhone ref={sectionRefs.section3} />
+            <AboutSectionPhone ref={sectionRefs.section7} />
+            <ServicesSectionPhone ref={sectionRefs.section8} />
             <ConcultationSection
-              ref={sectionRefs.section4}
+              ref={sectionRefs.section9}
               onClickAdd={onClickAdd}
               sectionPhone={true}
             />
-            <Gallery ref={sectionRefs.section5} />
+            <Gallery ref={sectionRefs.section10} />
             <Footer
+              onNavigate={onNavigate}
               onClickModalPolicy={onClickModalPolicy}
               onClickAdd={onClickAdd}
               footerPhone={true}

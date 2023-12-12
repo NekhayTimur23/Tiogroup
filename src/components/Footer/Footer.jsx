@@ -19,38 +19,38 @@ export default function Footer({
           <div className={styles.footerNav}>
             <div
               onClick={() => {
-                onNavigate("section1");
+                onNavigate(!footerPhone ? "section1" : "section6");
               }}
             >
               <span>ГЛАВНАЯ</span>
             </div>
             <div
               onClick={() => {
-                onNavigate("section2");
+                onNavigate(!footerPhone ? "section2" : "section7");
               }}
             >
               <span>О НАС</span>
             </div>
             <div
               onClick={() => {
-                onNavigate("section3");
+                onNavigate(!footerPhone ? "section3" : "section8");
               }}
             >
               <span>УСЛУГИ</span>
             </div>
             <div
               onClick={() => {
-                onNavigate("section5");
-              }}
-            >
-              <span>ГАЛЕРЕЯ</span>
-            </div>
-            <div
-              onClick={() => {
-                onNavigate("section4");
+                onNavigate(!footerPhone ? "section4" : "section9");
               }}
             >
               <span>КОНТАКТЫ</span>
+            </div>
+            <div
+              onClick={() => {
+                onNavigate(!footerPhone ? "section5" : "section10");
+              }}
+            >
+              <span>ГАЛЕРЕЯ</span>
             </div>
           </div>
           <div className={styles.footerCocialNetwork}>

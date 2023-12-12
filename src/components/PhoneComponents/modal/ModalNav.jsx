@@ -15,32 +15,32 @@ function ModalNav({ addModalNav, modalNavOn, onClickAdd, onNavigate}) {
     >
       <div className={styles.modelNavContent}>
         <div onClick={() => {
-            onNavigate("section1");
+            onNavigate("section6");
             addModalNav()
           }}
           >
           <span>ГЛАВНАЯ</span>
         </div>
         <div onClick={() => {
-            onNavigate("section2");
+            onNavigate("section7");
             addModalNav()
           }}>
           <span>О НАС</span>
         </div>
         <div onClick={() => {
-            onNavigate("section3");
+            onNavigate("section8");
             addModalNav()
           }}>
           <span>УСЛУГИ</span>
         </div>
         <div onClick={() => {
-            onNavigate("section4");
+            onNavigate("section9");
             addModalNav()
           }}>
           <span>КОНТАКТЫ</span>
         </div>
         <div onClick={() => {
-            onNavigate("section5");
+            onNavigate("section10");
             addModalNav()
           }} 
           >
