@@ -15,7 +15,7 @@ const ModalCall = ({ onClose }) => {
 
     try {
       const response = await fetch(
-        'http://localhost:3001/api/send',
+        `${window.location.protocol}//${window.location.hostname}/api/send-email`,
         {
           method: "POST",
           headers: {
@@ -44,7 +44,7 @@ const ModalCall = ({ onClose }) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
     let formattedValue = "";
     console.log(
-      'http://localhost:3001/api/send',
+      `${window.location.protocol}//${window.location.hostname}api/send-email`,
       "clg для проверки имени хоста"
     );
 
