@@ -5,15 +5,12 @@ export default function ButtonComp({
   onClickAdd,
   mainPhone,
   footerPhone,
+  servicesSection
 }) {
   return (
     <div
-      className={
-        footerPhone
-          ? mainPhone
-            ? [styles.buttonBox, styles.mainPhoneSection,styles.footerPhoneSection].join(" ")
-            : [styles.buttonBox, styles.footerPhoneSection].join(" ")
-          : styles.buttonBox
+      className={ 
+        `${styles.buttonBox} ${mainPhone ? styles.mainPhoneSection : ""} ${ footerPhone ? styles.footerPhoneSection : ""} ${servicesSection ? styles.servicesSection : "" }`
       }
     >
       <div onClick={onClickAdd} className={styles.buttonCall}>

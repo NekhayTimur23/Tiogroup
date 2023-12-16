@@ -7,7 +7,7 @@ import styles from "./page.module.sass";
 import Main from "@/components/MainSection/MainSection";
 import About from "@/components/AboutSection/AboutSection";
 import Head from "next/head";
-import Services from "@/components/ServicesSection/ServicesSection";
+import ServicesSection from "@/components/ServicesSection/ServicesSection";
 import Concultation from "@/components/ConcultationSection/Concultation";
 import Reviews from "@/components/ReviewsSection/ReviewsSection";
 import Footer from "@/components/Footer/Footer";
@@ -79,8 +79,7 @@ export default function Home() {
             onClickAdd={toggleModalCall}
           />
           <About ref={sectionRefs.section2} onClickAdd={toggleModalCall} />
-          <Services ref={sectionRefs.section3} />
-
+          <ServicesSection onClickAdd={toggleModalCall} ref={sectionRefs.section3} />
           <Concultation
             ref={sectionRefs.section4}
             onClickAdd={toggleModalCall}
