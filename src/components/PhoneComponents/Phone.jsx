@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Phone.module.sass";
 import MainSectionPhone from "./mainSectionPhone/MainSectionPhone";
 import AboutSectionPhone from "./aboutSectionPhone/AboutSectionPhone";
-import ServicesSectionPhone from "./servicesSectionPhone/ServicesSectionPhone";
+import ServicesSection from "../ServicesSection/ServicesSection";
 import HeaderSectionPhone from "./headerSectionPhone/HeaderSectionPhone";
 import ConcultationSection from "../ConcultationSection/Concultation";
 import ModalNav from "./modal/ModalNav";
@@ -31,7 +31,7 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
               onClickAdd={onClickAdd}
             />
             <AboutSectionPhone ref={sectionRefs.section7} />
-            <ServicesSectionPhone ref={sectionRefs.section8} />
+            <ServicesSection onClickAdd={onClickAdd} ref={sectionRefs.section8} />
             <ConcultationSection
               ref={sectionRefs.section9}
               onClickAdd={onClickAdd}
