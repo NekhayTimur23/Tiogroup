@@ -27,7 +27,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // Обработка маршрута для отправки email
-app.post("/api/send-email", (req, res) => {
+app.post("/api/send", (req, res) => {
   // Данные, которые вы получаете из тела запроса
   console.log(req.body);
   const { name, email, phone } = req.body;

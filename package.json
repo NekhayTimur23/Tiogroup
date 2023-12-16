@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"next dev\" \"node ./src/app/api/send-email.mjs\"",
+    "dev": "concurrently \"next dev\" \"node ./src/app/api/send.mjs\"",
     "build": "next build",
-    "start": "concurrently \"next start\" \"node ./src/app/api/send-email.mjs\"",
+    "start": "concurrently \"next start\" \"node ./src/app/api/send.mjs\"",
     "lint": "next lint"
   },
   "dependencies": {
