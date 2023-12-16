@@ -1,6 +1,5 @@
-import Carousel from "./Carousel/Carousel";
-import { forwardRef, useState, useEffect } from "react";
-import "./Garrery.sass";
+import { forwardRef } from "react";
+import styles from "./Garrery.module.sass";
 
 const Gallery = forwardRef((props, ref) => {
   let newMapCards = [
@@ -26,19 +25,7 @@ const Gallery = forwardRef((props, ref) => {
     },
   ];
 
-  return (
-    <Carousel ref={ref} >
-      {newMapCards.map((card) => (
-        <div
-          key={card.id}
-          className={`item imet-${card.id}`}
-          url={card.url}
-        >
-          {card.name}
-        </div>
-      ))}
-    </Carousel>
-  );
+  return <div className=""></div>;
 });
 
 Gallery.displayName = "Gallery";

@@ -55,7 +55,7 @@ const ServicesSection = forwardRef(({ onClickAdd }, ref) => {
     <div className={styles.servicesSection}>
       <div className={styles.servicesContainer}>
         <div ref={ref} className={styles.servicesContent}>
-          <h1>Мы предлогаем</h1>
+          <h1>Наши услуги</h1>
           <div className={styles.servicesCards}>
             {/* КАРТЫ */}
             {cards.map((card, i) => (
