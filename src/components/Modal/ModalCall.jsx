@@ -15,7 +15,7 @@ const ModalCall = ({ onClose }) => {
 
     try {
       const response = await fetch(
-        'http://79.174.80.123:3001/api/send',
+        'http://localhost:3001/api/send',
         {
           method: "POST",
           headers: {
@@ -44,7 +44,7 @@ const ModalCall = ({ onClose }) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
     let formattedValue = "";
     console.log(
-      'http://79.174.80.123:3001/api/send',
+      'http://localhost:3001/api/send',
       "clg для проверки имени хоста"
     );
 
