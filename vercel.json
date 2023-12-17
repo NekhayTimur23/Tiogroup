@@ -1,20 +1,13 @@
 {
-    "version": 2,
-    "routes": [
-      {
-        "src": "/api/send-email",
-        "methods": ["POST"],
-        "dest": "/api/send-email"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/$1"
-      }
-    ],
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/next"
-      }
-    ]
-  }
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "http://localhost:3001/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
