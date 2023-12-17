@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 // Настройка транспорта Nodemailer
 const transporter = nodemailer.createTransport({
   // Ваши настройки SMTP
-  host: "smtp.mail.ru", // SMTP сервер вашего почтового провайдера
+  host: 'smtp.mail.ru', // SMTP сервер вашего почтового провайдера
   port: 465, // Порт, обычно 587 для защищенного соединения
   secure: true, // true для 465 порта, false для других портов
   auth: {
