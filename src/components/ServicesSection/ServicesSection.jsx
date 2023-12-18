@@ -9,7 +9,7 @@ const ServicesSection = forwardRef(({ onClickAdd }, ref) => {
       textWork: "роботы",
       namberClass: "servicesCardOne",
       style:
-        "linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.455),rgb(0, 0, 0)), url('/servicesSection/scott-blake-x-ghf9LjrVg-unsplash.webp') center/cover",
+        "url('/servicesSection/scott-blake-x-ghf9LjrVg-unsplash.webp') center/cover",
       texts: [
         "Земляные работы.",
         "Каменные работы.",
@@ -25,7 +25,7 @@ const ServicesSection = forwardRef(({ onClickAdd }, ref) => {
       textWork: "территорий",
       namberClass: "servicesCardTwo",
       style:
-        "linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.455),rgb(0, 0, 0)), url('/servicesSection/mark-raptapolus-lXtVJ6nP9lc-unsplash.webp') center/cover",
+        "url('/servicesSection/mark-raptapolus-lXtVJ6nP9lc-unsplash.webp') center/cover",
       texts: [
         "Земляные работы.",
         "Установка элементов малой архитектуры.",
@@ -40,7 +40,7 @@ const ServicesSection = forwardRef(({ onClickAdd }, ref) => {
       textWork: "роботы",
       namberClass: "servicesCardFree",
       style:
-        "linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.455),rgb(0, 0, 0)), url('/servicesSection/hobi-industri-NLBJ2I0lNr4-unsplash.webp') center/cover",
+        "url('/servicesSection/hobi-industri-NLBJ2I0lNr4-unsplash.webp') center/cover",
       texts: [
         "Кабельные линии.",
         "Электроустановки.",
@@ -64,16 +64,20 @@ const ServicesSection = forwardRef(({ onClickAdd }, ref) => {
                 style={{ background: `${card.style}` }}
                 className={styles.servicesCard}
               >
-                <div className={styles.titleBlock}>
-                  <h4>{card.title}</h4>
-                  <p className={styles.servicesCardTextWork}>{card.textWork}</p>
+                <div className={styles.servicesCardBg}>
+                  <div className={styles.titleBlock}>
+                    <h4>{card.title}</h4>
+                    <p className={styles.servicesCardTextWork}>
+                      {card.textWork}
+                    </p>
+                  </div>
+                  <div className={styles.tetxBlock}>
+                    {card.texts.map((text, textIndex) => (
+                      <p key={textIndex}>{text}</p>
+                    ))}
+                  </div>
+                  <ButtonComp servicesSection={true} onClickAdd={onClickAdd} />
                 </div>
-                <div className={styles.tetxBlock}>
-                  {card.texts.map((text, textIndex) => (
-                    <p key={textIndex}>{text}</p>
-                  ))}
-                </div>
-                <ButtonComp servicesSection={true} onClickAdd={onClickAdd} />
               </div>
             ))}
           </div>

@@ -44,7 +44,7 @@ const ModalCall = ({ onClose }) => {
     const inputValue = e.target.value.replace(/[^\d]/g, ""); // Удаляем все нецифровые символы
     let formattedValue = "";
     console.log(
-      `${window.location.protocol}//${window.location.hostname}api/send-email`,
+      `${window.location.protocol}//${window.location.hostname}/api/send-email`,
       "clg для проверки имени хоста"
     );
 
