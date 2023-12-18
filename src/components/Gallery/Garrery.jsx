@@ -17,25 +17,29 @@ const Gallery = forwardRef((props, ref) => {
       title: "Сенеж",
       subtitle: "подзаголовок",
       text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam tempore nisi maxime sed neque corporis, quibusdam dignissimos sint at, magnam enim impedit hic praesentium tenetur. Impedit dolore non nulla blanditiis.",
-      cardBgImage: '/gallery/GVVGVhbhbhvfCg.png',
+      cardBgImage: '/gallery/GVVGVhbhbhvfCg.webp',
+      cardBgImagev2: '/gallery/GVVGVhbhbhvfCgv2.webp',
     },
     {
       title: "Сенеж2",
       subtitle: "подзаголовок",
       text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam tempore nisi maxime sed neque corporis, quibusdam dignissimos sint at, magnam enim impedit hic praesentium tenetur. Impedit dolore non nulla blanditiis.",
-      cardBgImage: '/gallery/JBGVhuhugtF.png',
+      cardBgImage: '/gallery/JBGVhuhugtF.webp',
+      cardBgImagev2: '/gallery/JBGVhuhugtFv2.webp',
     },
     {
       title: "Сенеж3",
       subtitle: "подзаголовок",
       text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam tempore nisi maxime sed neque corporis, quibusdam dignissimos sint at, magnam enim impedit hic praesentium tenetur. Impedit dolore non nulla blanditiis.",
-      cardBgImage: '/gallery/RFHijijnHVC.png',
+      cardBgImage: '/gallery/RFHijijnHVC.webp',
+      cardBgImagev2: '/gallery/RFHijijnHVCv2.webp',
     },
     {
       title: "Сенеж4",
       subtitle: "подзаголовок",
       text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam tempore nisi maxime sed neque corporis, quibusdam dignissimos sint at, magnam enim impedit hic praesentium tenetur. Impedit dolore non nulla blanditiis.",
-      cardBgImage: '/gallery/whwJGJLo.png',
+      cardBgImage: '/gallery/whwJGJLo.webp',
+      cardBgImagev2: '/gallery/whwJGJLo.webp',
     },
   ];
 
@@ -63,7 +67,7 @@ const Gallery = forwardRef((props, ref) => {
         {sliderCards.map((card, i) => (
           <SwiperSlide
             key={i}
-            style={{ background: `radial-gradient(ellipse farthest-corner at 15% 80%, rgba(0, 0, 0, 0.621),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${card.cardBgImage}') center/cover no-repeat` }}
+            style={{ background: `radial-gradient(ellipse farthest-corner at 15% 80%, rgba(0, 0, 0, 0.621),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${ window.innerWidth >= 1000 ? card.cardBgImage : card.cardBgImagev2}') center/cover no-repeat` }}
             className="swiper-slide"
           >
             <div className="title" data-swiper-parallax="-400">
