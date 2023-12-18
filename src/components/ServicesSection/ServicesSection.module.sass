@@ -25,33 +25,40 @@
                 @media ( max-width: 950px ) 
                     grid-template-columns: repeat(1, 1fr)
                 .servicesCard
-                    display: flex
-                    flex-direction: column
-                    align-items: center
-                    justify-content: space-between
-                    height: calc(300px + (400 - 300)*(100vw - 320px) / (2568 - 320))
-                    padding: calc(15px + (20 - 15)*(100vw - 320px) / (2568 - 320))
+                    // background: linear-gradient(rgba(0, 0, 0, 0.65),rgba(0, 0, 0, 0.455),rgb(0, 0, 0)) !important
                     border-radius: 10px
                     color: rgb(255, 255, 255)
-                    .titleBlock
-                        text-align: center
-                        h4
-                            margin-bottom: 3px
-                            font-size: calc(24px + (26 - 24)*(100vw - 1030px) / (2568 - 1030))
-                            @media ( max-width: 1030px ) 
-                                font-size: 22px
-                        .servicesCardTextWork  
-                            font-size: calc(14px + (16 - 14)*(100vw - 1030px) / (2568 - 1030))
-                            margin-bottom:  calc(8px + (10 - 8)*(100vw - 1030px) / (2568 - 1030))
-                            @media ( max-width: 1030px ) 
-                                font-size: 14px
+                    overflow: hidden
+                    .servicesCardBg
+                        height: calc(300px + (600 - 300)*(100vw - 320px) / (2568 - 320))
+                        background-image: linear-gradient(rgba(0, 0, 0, 0.309), rgba(0, 0, 0, 0.42), rgb(0, 0, 0))
+                        padding: calc(15px + (20 - 15)*(100vw - 320px) / (2568 - 320))
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        justify-content: space-around
+                        transition: 0.5s
+                        &:hover
+                            transform: scale(1.1)
+                        .titleBlock
+                            text-align: center
+                            h4
+                                margin-bottom: 3px
+                                font-size: calc(24px + (26 - 24)*(100vw - 1030px) / (2568 - 1030))
+                                @media ( max-width: 1030px ) 
+                                    font-size: 22px
+                            .servicesCardTextWork  
+                                font-size: calc(14px + (16 - 14)*(100vw - 1030px) / (2568 - 1030))
                                 margin-bottom:  calc(8px + (10 - 8)*(100vw - 1030px) / (2568 - 1030))
-                    .tetxBlock
-                        width: 100%
-                        text-align: center
-                        font-size: calc(14px + (18 - 14)*(100vw - 1030px) / (2568 - 1030))
-                        p
-                            margin-bottom: calc(5px + (10 - 5)*(100vw - 1030px) / (2568 - 1030))
-                        @media ( max-width: 1030px ) 
-                                font-size: 14px
-                                margin-bottom: 5px
+                                @media ( max-width: 1030px ) 
+                                    font-size: 14px
+                                    margin-bottom:  calc(8px + (10 - 8)*(100vw - 1030px) / (2568 - 1030))
+                        .tetxBlock
+                            width: 100%
+                            text-align: center
+                            font-size: calc(14px + (18 - 14)*(100vw - 1030px) / (2568 - 1030))
+                            p
+                                margin-bottom: calc(5px + (10 - 5)*(100vw - 1030px) / (2568 - 1030))
+                            @media ( max-width: 1030px ) 
+                                    font-size: 14px
+                                    margin-bottom: 5px
