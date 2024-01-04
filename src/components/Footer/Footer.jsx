@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import styles from "./Footer.module.sass";
 import ButtonComp from "../ButtonSection/ButtonComp";
 
