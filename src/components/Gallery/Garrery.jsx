@@ -1,6 +1,6 @@
-import React, { useRef, useState, forwardRef, useEffect } from "react";
+import React, { forwardRef } from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide, nextEl } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "./Garrery.sass";
 
 // Import Swiper styles
@@ -67,7 +67,7 @@ const Gallery = forwardRef((props, ref) => {
         {sliderCards.map((card, i) => (
           <SwiperSlide
             key={i}
-            style={{ background: `radial-gradient(ellipse farthest-corner at 15% 80%, rgba(0, 0, 0, 0.621),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${ window.innerWidth >= 1000 ? card.cardBgImage : card.cardBgImagev2}') center/cover no-repeat` }}
+            style={{ background: `radial-gradient(ellipse farthest-corner at 15% 80%, rgba(0, 0, 0, 0.621),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('card.cardBgImage') center/cover no-repeat` }}
             className="swiper-slide"
           >
             <div className="title" data-swiper-parallax="-400">
