@@ -8,6 +8,7 @@ import ConcultationSection from "../ConcultationSection/Concultation";
 import ModalNav from "./modal/ModalNav";
 import Footer from "../Footer/Footer";
 import Gallery from "../Gallery/Garrery";
+import AsphaltSection from "../Asphalt/AsphaltSection";
 
 function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
   const [modalNavOn, setModalNavOn] = useState(false);
@@ -31,6 +32,7 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
               onClickAdd={onClickAdd}
             />
             <AboutSectionPhone ref={sectionRefs.section7} />
+            <AsphaltSection />
             <ServicesSection onClickAdd={onClickAdd} ref={sectionRefs.section8} />
             <ConcultationSection
               ref={sectionRefs.section9}
