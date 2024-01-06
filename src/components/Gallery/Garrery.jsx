@@ -67,7 +67,7 @@ const Gallery = forwardRef((props, ref) => {
         {sliderCards.map((card, i) => (
           <SwiperSlide
             key={i}
-            style={{ background: `radial-gradient(ellipse farthest-corner at 15% 80%, rgba(0, 0, 0, 0.621),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('card.cardBgImage') center/cover no-repeat` }}
+            style={{ background: `radial-gradient(ellipse farthest-corner at 15% 80%, rgba(0, 0, 0, 0.621),rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('${card.cardBgImage}') center/cover no-repeat` }}
             className="swiper-slide"
           >
             <div className="title" data-swiper-parallax="-400">

@@ -13,6 +13,7 @@ import Reviews from "@/components/ReviewsSection/ReviewsSection";
 import Footer from "@/components/Footer/Footer";
 import Gallery from "@/components/Gallery/Garrery";
 import Phone from "@/components/PhoneComponents/Phone";
+import AsphaltSection from "@/components/Asphalt/AsphaltSection";
 
 // git config --global core.autocrlf true
 
@@ -79,6 +80,7 @@ export default function Home() {
             onClickAdd={toggleModalCall}
           />
           <About ref={sectionRefs.section2} onClickAdd={toggleModalCall} />
+          <AsphaltSection />
           <ServicesSection onClickAdd={toggleModalCall} ref={sectionRefs.section3} />
           <Concultation
             ref={sectionRefs.section4}
