@@ -98,7 +98,7 @@ export default function Home() {
           <Phone sectionRefs={sectionRefs} onClickModalPolicy={toggleModalPolicy} onNavigate={scrollToSection} onClickAdd={toggleModalCall} />
         </div>
         {isModalCallOpen && (
-          <ModalCall onClose={toggleModalCall}/>
+          <ModalCall toggleModalPolicy={toggleModalPolicy} onClose={toggleModalCall}/>
         )}
         {isModalPolicyOpen && (
           <ModalPrivacyPolicy onClose={toggleModalPolicy} />

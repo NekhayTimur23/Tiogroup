@@ -13,17 +13,13 @@ import AsphaltSection from "../Asphalt/AsphaltSection";
 function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
   const [modalNavOn, setModalNavOn] = useState(false);
 
-  const addModalNav = () => {
-    setTimeout(() => setModalNavOn(!modalNavOn), 200);
-  };
-
   return (
     <div className={styles.phone}>
       <div className={styles.phoneContainer}>
         <div className={styles.phoneContent}>
           <div
             className={styles.phoneSections}
-            onClick={() => setModalNavOn(false)}
+            onClick={() => {setModalNavOn(!modalNavOn)}}
           >
             <HeaderSectionPhone
             />
@@ -48,7 +44,7 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
             />
 
             <div
-              onClick={addModalNav}
+              onClick={() => setModalNavOn(!modalNavOn)}
               className={styles.headerPhoneButtonModal}
             >
               <div className={styles.headerButton}></div>
@@ -59,7 +55,7 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
                 onNavigate={onNavigate}
                 onClickAdd={onClickAdd}
                 modalNavOn={modalNavOn}
-                addModalNav={addModalNav}
+                addModalNav={() => {setModalNavOn(!modalNavOn)}}
               />
           </div>
         </div>
