@@ -19,17 +19,21 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
         <div className={styles.phoneContent}>
           <div
             className={styles.phoneSections}
-            onClick={() => {setModalNavOn(!modalNavOn)}}
+            onClick={() => {
+              setModalNavOn(false);
+            }}
           >
-            <HeaderSectionPhone
-            />
+            <HeaderSectionPhone />
             <MainSectionPhone
               ref={sectionRefs.section6}
               onClickAdd={onClickAdd}
             />
             <AboutSectionPhone ref={sectionRefs.section7} />
             <AsphaltSection />
-            <ServicesSection onClickAdd={onClickAdd} ref={sectionRefs.section8} />
+            <ServicesSection
+              onClickAdd={onClickAdd}
+              ref={sectionRefs.section8}
+            />
             <ConcultationSection
               ref={sectionRefs.section9}
               onClickAdd={onClickAdd}
@@ -44,7 +48,10 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
             />
 
             <div
-              onClick={() => setModalNavOn(!modalNavOn)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setModalNavOn(!modalNavOn);
+              }}
               className={styles.headerPhoneButtonModal}
             >
               <div className={styles.headerButton}></div>
@@ -52,11 +59,13 @@ function Phone({ onClickAdd, onClickModalPolicy, sectionRefs, onNavigate }) {
               <div className={styles.headerButton}></div>
             </div>
             <ModalNav
-                onNavigate={onNavigate}
-                onClickAdd={onClickAdd}
-                modalNavOn={modalNavOn}
-                addModalNav={() => {setModalNavOn(!modalNavOn)}}
-              />
+              onNavigate={onNavigate}
+              onClickAdd={onClickAdd}
+              modalNavOn={modalNavOn}
+              addModalNav={() => {
+                setModalNavOn(!modalNavOn);
+              }}
+            />
           </div>
         </div>
       </div>
