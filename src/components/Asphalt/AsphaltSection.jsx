@@ -25,11 +25,11 @@ const AsphaltSection = () => {
             </div>
           </div>
           <div className={styles.asphaltCantentRight}>
-            <p  className={styles.textFirst}>Закажите бесплатный выезд на <br/>объект сейчас и получите скидку 10% перейдя по ссылке ниже</p>
-            <div className={styles.asphaltCantentRightButton}>
+            <p  className={styles.textFirst}>Закажите бесплатный выезд на объект сейчас и получите скидку 10% перейдя по ссылке ниже</p>
+            <a href="https://www.a1asfaltirovanie.ru" className={styles.asphaltCantentRightButton}>
               <p className={styles.textFontSizeOne}>www.a1asfaltirovanie.ru</p>
               <p className={styles.textFontSizeTwo}><GoArrowRight /></p>
-            </div>
+            </a>
           </div>
         </div>
       </div>
