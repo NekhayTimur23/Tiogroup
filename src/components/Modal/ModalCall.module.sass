@@ -16,7 +16,7 @@
         justify-content: center
         align-items: center
         background-color: white
-        padding: 20px
+        padding: calc(20px + (40 - 20)*(100vw - 320px) / (2568 - 320))
         border-radius: 5px
         max-width: 40vw
         min-height: 1vh
@@ -29,8 +29,23 @@
             margin-bottom: 1vmin
         .modalContainer
             margin-bottom: calc(5px + (30 - 5)*(100vw - 320px) / (2568 - 320))
+            .checkboxBlock
+                .checkboxInput
+                    width: calc(18px + (20 - 18)*(100vw - 320px) / (2568 - 320))
+                    height: calc(18px + (20 - 18)*(100vw - 320px) / (2568 - 320))
+                    margin-right: 10px
+                    color: #fff
+                .checkboxText
+                    font-size: calc(16px + (30 - 16)*(100vw - 320px) / (2568 - 320))
+                    a
+                        color: rgb(197, 81, 35)
+                        &:hover
+                            cursor: pointer
+                            color: rgb(255, 95, 30)
             .inputBlock
-                display: inline
+                margin-bottom: 20px
+                width: 100%
+                height: 100%
                 .modalContainerInput
                     width: 30vmin
                     height: 3.5vmin
@@ -67,6 +82,7 @@
                 @media (max-width: 1030px )
                     width: calc(100px + (130 - 95) * (100vw - 320px) / (1030 - 320))
                     height: 30px
+                
                 .buttonCall
                     display: flex
                     align-items: center
@@ -88,12 +104,15 @@
                     transition: 0.1s ease
                     @media (max-width: 1030px )
                         font-size: calc(10px + (14 - 10) * (100vw - 320px) / (1030 - 320))
+                .buttonCallActive
                     &:active
                         font-size: calc(11px + (15 - 11) * (100vw - 320px) / (2568 - 320))
                         box-shadow:  -10px -10px 15px rgba(255, 255, 255, 0.344), 10px 10px 15px rgba(0, 0, 0, 0.044) , inset -10px -10px 15px rgba(255, 126, 75, 0.727), inset 10px 10px 15px rgba(0, 0, 0, 0.16)
                         background-color: rgb(255, 95, 30)
                         @media (max-width: 1030px )
                             font-size: calc(9px + (13 - 9) * (100vw - 320px) / (1030 - 320))
+                .buttonCallOff
+                    background-color: rgb(246, 162, 129)
             .closeButton
                 position: relative
                 width: calc(80px + (90 - 80)*(100vw - 1030px) / (2568 - 1030))

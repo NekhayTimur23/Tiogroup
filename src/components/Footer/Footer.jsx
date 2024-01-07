@@ -87,7 +87,7 @@ export default function Footer({
                 </div>
               </a>
               {/* вконтакте */}
-              <a
+              {/* <a
                 href={whatsAppChannelUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -100,7 +100,7 @@ export default function Footer({
                   </div>
                   <p>Вконтакте</p>
                 </div>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -110,8 +110,7 @@ export default function Footer({
             <span>9.00-19.00 ПН-ПТ</span>
             <p>Наши телефоны:</p>
             <div className={styles.call}>
-              <span><a href="tel:+7900000000">+7 (000) 000-00-07</a></span>
-              <span>8 (800) 888-88-88</span>
+              <span><a href="tel:+79189255217">+7 (918) 925-52-17</a></span>
             </div>
           </div>
           <div className={styles.footerButton}>
@@ -134,8 +133,8 @@ export default function Footer({
       <div className={styles.Info}>
         <div className={styles.InfoLeft}>
           <p>Copyright © 2023 TrioGroup</p>
-          <p>ИНН: 123456789111</p>
-          <p>ОГРНИП: 1110987654321</p>
+          <p>ИНН: 7718930460</p>
+          <p>ОГРН: 1137746358276</p>
         </div>
         <div className={styles.InfoRight}>
           <p onClick={onClickModalPolicy} className={styles.textPolit}>

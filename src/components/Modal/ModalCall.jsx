@@ -3,13 +3,22 @@
 import { useState } from "react";
 import styles from "./ModalCall.module.sass";
 
-const ModalCall = ({ onClose }) => {
+const ModalCall = ({ onClose, toggleModalPolicy }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [agreed, setAgreed] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // if (!agreed) {
+    //   alert("Пожалуйста, согласитесь с политикой конфиденциальности");
+    //   return;
+    // }
+
+    console.log("нажал");
+
     const formData = { name, email, phone };
     
 
@@ -107,10 +116,24 @@ const ModalCall = ({ onClose }) => {
                 required
               />
             </div>
+
+            <div className={styles.checkboxBlock}>
+              <input
+                type="checkbox"
+                id="agreementCheckbox"
+                checked={agreed}
+                className={styles.checkboxInput}
+                onChange={() => setAgreed(!agreed)}
+              />
+              <label className={styles.checkboxText}>
+                 Я соглашаюсь с <a onClick={toggleModalPolicy}>политикой конфиденциальности</a> 
+              </label>
+            </div>
+
           </div>
           <div className={styles.buttonBlock}>
             <div className={styles.buttonInput}>
-              <button type="submit" className={styles.buttonCall}>
+              <button type={agreed === true ? "submit" : "button"} className={agreed === true ? [styles.buttonCall, styles.buttonCallActive].join(' ') : [styles.buttonCall, styles.buttonCallOff].join(' ') }>
                 ЗАКАЗАТЬ ЗВОНОК
               </button>
             </div>
